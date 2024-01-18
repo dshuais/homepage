@@ -8,11 +8,13 @@ export default defineAppConfig({
       github: 'nuxt-themes/docus'
     },
     aside: {
-      level: 0,
-      exclude: []
+      level: 1,
+      exclude: [],
+      // collapsed: true
     },
     header: {
-      logo: true
+      logo: true,
+      navigation: true
     },
     footer: {
       iconLinks: [
