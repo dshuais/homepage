@@ -48,7 +48,8 @@ export default defineAppConfig({
         },
         {
           text: '鄂ICP备2022011303号-1',
-          href: 'https://beian.miit.gov.cn/'
+          href: 'https://beian.miit.gov.cn/',
+          target: '_blank'
         }
       ],
       iconLinks: [
