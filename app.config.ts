@@ -43,7 +43,11 @@ export default defineAppConfig({
         //   href: 'https://github.com/dshuais/',
         // },
         {
-          text: 'Copyright© 2022-present  鄂ICP备2022011303号-1',
+          text: 'Copyright© 2022-present',
+          href: 'https://www.dshuais.com/'
+        },
+        {
+          text: '鄂ICP备2022011303号-1',
           href: 'https://beian.miit.gov.cn/'
         }
       ],

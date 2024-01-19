@@ -1,6 +1,7 @@
 export default defineNuxtConfig({
   extends: '@nuxt-themes/docus',
   modules: ['@nuxtjs/tailwindcss'],
+  css: ["aos/dist/aos.css", "/assets/styles/index.css"],
   runtimeConfig: {
     public: {
       algolia: {
