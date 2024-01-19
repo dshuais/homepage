@@ -1,21 +1,28 @@
 <script setup lang="ts">
-const route = useRoute()
-const { navBottomLink } = useContentHelpers()
-const { navigation } = useContent()
-const { config } = useDocus()
+const route = useRoute();
+const { navBottomLink } = useContentHelpers();
+const { navigation } = useContent();
+const { config } = useDocus();
 
-const hasNavigation = computed(() => !!config.value.aside?.level)
+const hasNavigation = computed(() => !!config.value.aside?.level);
 
-const filtered = computed(() => config.value.header?.exclude || [])
+const filtered = computed(() => config.value.header?.exclude || []);
 
 const tree = computed(() => {
   return (navigation.value || []).filter((item: any) => {
-    if (filtered.value.includes(item._path as never)) { return false }
-    return true
-  })
-})
+    if (filtered.value.includes(item._path as never)) {
+      return false;
+    }
+    return true;
+  });
+});
 
-const isActive = (link: any) => (link.exact ? route.fullPath === link._path : route.fullPath.startsWith(link._path))
+console.log("tree", tree.value, navigation.value);
+
+const isActive = (link: any) =>
+  link.exact
+    ? route.fullPath === link._path
+    : route.fullPath.startsWith(link._path);
 </script>
 
 <template>
@@ -24,10 +31,14 @@ const isActive = (link: any) => (link.exact ? route.fullPath === link._path : ro
     <ul>
       <li v-for="link in tree" :key="link._path">
         <NuxtLink
-          class="link" :to="link.redirect ? link.redirect : navBottomLink(link)"
+          class="link"
+          :to="link.redirect ? link.redirect : navBottomLink(link)"
           :class="{ active: isActive(link) }"
         >
-          <Icon v-if="link.icon && config?.header?.showLinkIcon" :name="link.icon" />
+          <Icon
+            v-if="link.icon && config?.header?.showLinkIcon"
+            :name="link.icon"
+          />
           {{ link.title }}
         </NuxtLink>
       </li>

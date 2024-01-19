@@ -13,5 +13,12 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  // 在content/navigation/fields下配置自定义字段 _dir.yml内才可使用
+  content: {
+    navigation: {
+      // fields: ['icon', 'titleTemplate', 'header', 'main', 'aside', 'footer']
+      fields: ['collapse']
+    }
   }
 })

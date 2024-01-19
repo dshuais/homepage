@@ -1,1 +1,9 @@
 title: 专栏
+# icon: 
+#   - title: xxx
+aside: aside
+titleTemplate: titleTemplate
+header: header
+main: main
+footer: footer
+collapse: true
