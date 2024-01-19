@@ -1,9 +1,9 @@
 <template>
-  <div class="flex">
+  <div class="flex mr-8">
     <!-- <img height="25" width="25" src="/logo.svg"> -->
     <h3 class="text-base ml-2">
       <!-- <span class="">Create </span><span class="text font-semibold">Keep Design</span> -->
-      <span>dshuais' <span class="text">blog</span></span>
+      <span>dshuais</span>
     </h3>
   </div>
 </template>
