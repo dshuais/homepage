@@ -22,7 +22,7 @@ tree.value.unshift({
   _path: '/',
 })
 
-console.log('tree', tree.value, navigation.value, route.fullPath)
+// console.log('tree', tree.value, navigation.value, route.fullPath)
 
 const isActive = (link: any) => {
   if (link._path === '/') return route.fullPath === '/'
@@ -41,11 +41,8 @@ const isActive = (link: any) => {
         <div v-if="link.collapse" class="link collapse-link">
           {{ link.title }}
         </div>
-        <div v-if="link.collapse" class="collapse-content rounded-md border shadow-xl">
-          <div v-for="(item, i) in link.collapseList" :key="i" class="menu-link rounded-lg">
-            {{ item.title }}
-            <img class="menu-icon" src="data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' %3E%3Cpath d='M0 0h24v24H0V0z' fill='none' /%3E%3Cpath d='M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z' /%3E%3C/svg%3E" alt="">
-          </div>
+        <div v-if="link.collapse" class="collapse-content rounded-2xl border shadow-xl">
+          123
         </div>
 
         <NuxtLink
@@ -92,7 +89,6 @@ css({
       flex: '1',
       maxWidth: '100%',
       truncate: true,
-      overflow: 'visible',
 
       '& > * + *': {
         marginLeft: '{space.2}'
@@ -101,14 +97,6 @@ css({
       li: {
         display: 'inline-flex',
         gap: '{space.1}',
-        position: 'relative',
-        '&:hover': {
-          '.collapse-content': {
-            opacity: '1',
-            pointerEvents: 'auto', // Enable pointer events to allow interaction
-            visibility: 'visible',
-          },
-        }
       },
 
       '.link': {
@@ -149,48 +137,29 @@ css({
       },
 
       '.collapse-link': {
-        cursor: 'pointer'
+        cursor: 'pointer',
+        
+        '&:hover': {
+          '.collapse-content': {
+            opacity: '1',
+            pointerEvents: 'auto', // Enable pointer events to allow interaction
+            visibility: 'visible',
+          },
+        }
       },
       '.collapse-content': {
           position: 'absolute',
           top: '100%',
-          right: 0,
+          // transform: 'translateX(-50%)',
+          width: '100px',
+          height: '200px',
           background: '{elements-backdrop-background}',
+          // background: 'red',
           borderColor: '{color.gray.200}',
           opacity: '0',
           pointerEvents: 'none', // Disable pointer events to prevent interaction
-          transition: 'all 0.3s',
+          transition: 'opacity 0.2s ease-in-out',
           visibility: 'hidden',
-          padding: '{space.3}',
-          '@dark': {
-            borderColor: '{color.gray.700}',
-          },
-          '.menu-link': {
-            padding: '0 {space.2}',
-            lineHeight: '32px',
-            whiteSpace: 'nowrap',
-            fontWeight: '500',
-            cursor: 'pointer',
-            transition: 'all 0.3s',
-            marginBottom: '2px',
-            display: 'flex',
-            alignItems: 'center',
-            '&:last-child': {
-            marginBottom: '0px',
-            },
-            '&:hover': {
-              color: '{color.primary.500}',
-              backgroundColor: '{color.gray.100}',
-              '@dark': {
-                backgroundColor: '{color.gray.800}',
-              },
-            },
-            '.menu-icon': {
-              width: '11px',
-              height: '11px',
-              marginLeft: '4px',
-            }
-          }
         },
     }
   }

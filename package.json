@@ -14,6 +14,7 @@
     "@nuxt-themes/docus": "^1.15.0",
     "@nuxt/eslint-config": "^0.2.0",
     "@nuxtjs/tailwindcss": "^6.10.4",
+    "@types/aos": "^3.0.7",
     "aos": "^2.3.4",
     "eslint": "^8.56.0",
     "nuxt": "3.9.3"

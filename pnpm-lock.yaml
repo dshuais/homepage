@@ -17,6 +17,9 @@ devDependencies:
   '@nuxtjs/tailwindcss':
     specifier: ^6.10.4
     version: 6.10.4(rollup@3.29.4)
+  '@types/aos':
+    specifier: ^3.0.7
+    version: 3.0.7
   aos:
     specifier: ^2.3.4
     version: 2.3.4
@@ -2342,6 +2345,10 @@ packages:
     dependencies:
       '@tufjs/canonical-json': 2.0.0
       minimatch: 9.0.3
+    dev: true
+
+  /@types/aos@3.0.7:
+    resolution: {integrity: sha512-sEhyFqvKauUJZDbvAB3Pggynrq6g+2PS4XB3tmUr+mDL1gfDJnwslUC4QQ7/l8UD+LWpr3RxZVR/rHoZrLqZVg==}
     dev: true
 
   /@types/debug@4.1.12:

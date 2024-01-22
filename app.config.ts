@@ -2,14 +2,15 @@
  * @Author: dushuai
  * @Date: 2024-01-22 11:26:44
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-22 15:33:08
+ * @LastEditTime: 2024-01-22 15:57:24
  * @description: app.config
  */
 import { aside } from './config'
 
 export default defineAppConfig({
   docus: {
-    // title: "dshuais' blog",
+    // titleTemplate: "dshuais' blog",
+    title: "dshuais' blog",
     description: 'A Vite+TypeScript based scaffolding for quickly building a Vue 3 component library development environment.',
     image: '/logo.png',
     url: 'https://www.dshuais.com/',

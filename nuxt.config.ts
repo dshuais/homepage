@@ -1,3 +1,10 @@
+/*
+ * @Author: dushuai
+ * @Date: 2024-01-22 11:26:44
+ * @LastEditors: dushuai
+ * @LastEditTime: 2024-01-22 18:07:38
+ * @description: nuxt
+ */
 export default defineNuxtConfig({
   extends: '@nuxt-themes/docus',
   modules: ['@nuxtjs/tailwindcss'],
@@ -18,7 +25,7 @@ export default defineNuxtConfig({
   content: {
     navigation: {
       // fields: ['icon', 'titleTemplate', 'header', 'main', 'aside', 'footer']
-      fields: ['collapse']
+      fields: ['collapse', 'collapseList']
     }
   }
 })
