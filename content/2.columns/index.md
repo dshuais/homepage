@@ -4,5 +4,5 @@
 
 ## 专栏目录
 
-1、[开发自己的Vue 3组件库](/columns/create-keep-design) <br />
-2、[使用Vitepress搭建自己的博客或官网网站](/columns/vitepress)
+- [开发自己的Vue 3组件库](/columns/create-keep-design) <br />
+- [使用Vitepress搭建自己的博客或官网网站](/columns/vitepress)

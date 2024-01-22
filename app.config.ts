@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-22 11:26:44
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-22 12:19:46
+ * @LastEditTime: 2024-01-22 15:33:08
  * @description: app.config
  */
 import { aside } from './config'
@@ -54,7 +54,7 @@ export default defineAppConfig({
         //   href: 'https://github.com/dshuais/',
         // },
         {
-          text: 'Copyright© 2022-present DuShuai',
+          text: 'Copyright© 2022-PRESENT DuShuai',
           href: 'https://www.dshuais.com/'
         },
         {
