@@ -1,6 +1,15 @@
+/*
+ * @Author: dushuai
+ * @Date: 2024-01-22 11:26:44
+ * @LastEditors: dushuai
+ * @LastEditTime: 2024-01-22 12:19:46
+ * @description: app.config
+ */
+import { aside } from './config'
+
 export default defineAppConfig({
   docus: {
-    title: "dshuais' blog",
+    // title: "dshuais' blog",
     description: 'A Vite+TypeScript based scaffolding for quickly building a Vue 3 component library development environment.',
     image: '/logo.png',
     url: 'https://www.dshuais.com/',
@@ -8,6 +17,7 @@ export default defineAppConfig({
       // twitter: 'nuxtstudio',
       github: 'dshuais'
     },
+
     github: {
       dir: 'main/content',
       branch: 'main',
@@ -15,21 +25,22 @@ export default defineAppConfig({
       owner: 'dshuais',
       edit: true,
     },
-    aside: {
-      level: 1,
-      exclude: [],
-      // collapsed: true
-    },
+
+    aside,
+
     main: {
       padded: false,
       fluid: false,
     },
+
     header: {
       logo: true,
       showLinkIcon: true,
       navigation: true,
       fluid: false,
+      exclude: []
     },
+    
     footer: {
       fluid: false,
       credits: {
@@ -43,7 +54,7 @@ export default defineAppConfig({
         //   href: 'https://github.com/dshuais/',
         // },
         {
-          text: 'Copyright© 2022-present',
+          text: 'Copyright© 2022-present DuShuai',
           href: 'https://www.dshuais.com/'
         },
         {
