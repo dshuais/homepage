@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-22 11:26:44
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-23 18:22:43
+ * @LastEditTime: 2024-01-23 18:28:12
  * @description: home
 -->
 <script lang="ts" setup>
@@ -78,10 +78,11 @@ onMounted(() => {
             />
           </div>
 
-          <!-- <div class="max-w-5xl px-5 lg:px-0 mx-auto ">
+          <div class="max-w-5xl px-5 lg:px-0 mx-auto">
             <div class="relative group rounded-lg overflow-hidden">
-              <Terminal />
-              <div class="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-100 group-hover:bg-black/50 transition grid place-items-center">
+              <HomeTerminal />
+
+              <!-- <div class="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-100 group-hover:bg-black/50 transition grid place-items-center">
                 <div class="text-center">
                   <h1 class="text-4xl font-bold text-white">
                     Get started in one line!
@@ -96,9 +97,9 @@ onMounted(() => {
                     <CopyButton content="npm create sidebase@latest" />
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
-          </div> -->
+          </div>
         </div>
       </section>
     </div>

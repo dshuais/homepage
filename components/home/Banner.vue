@@ -2,8 +2,8 @@
  * @Author: dushuai
  * @Date: 2024-01-23 16:52:52
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-23 17:29:18
- * @description: 心平气和
+ * @LastEditTime: 2024-01-23 18:26:55
+ * @description: 首页顶部引导栏 跑马灯...
 -->
 <script setup lang="ts">
 defineProps({
