@@ -6,36 +6,30 @@
  * @description: bash
 -->
 <script setup lang="ts">
-import {
-  VTermynal,
-  VtInput,
-  VtProgress,
-  VtSpinner,
-  VtText,
-} from '@lehoczky/vue-termynal'
+import { VTermynal, VtInput, VtProgress, VtSpinner, VtText, } from "@lehoczky/vue-termynal";
 
-
-const nextId = ref<string>('')
-const container = ref<HTMLElement>()
+const nextId = ref<string>("");
+const container = ref<HTMLElement>();
 
 function scrollToNewLine(line: any) {
-  if (line.id === 'no-scroll') {
-    return
+  if (line.id === "no-scroll") {
+    return;
   }
-  nextId.value = line.id
+  nextId.value = line.id;
 
-  const containerElement = container.value as HTMLElement
+  const containerElement = container.value as HTMLElement;
 
   if (line.offsetTop - line.offsetHeight > containerElement.offsetHeight) {
     containerElement.scrollTo({
       top: line.offsetTop - line.offsetHeight - containerElement.offsetHeight + 100,
-      behavior: 'smooth',
-    })
+      behavior: "smooth",
+    });
   }
 }
 
 function scrollToTop(this: any) {
-  container.value?.scrollTo({ top: 0 })
+  console.log("scrollToTop");
+  container.value?.scrollTo({ top: 0 });
 }
 </script>
 <template>

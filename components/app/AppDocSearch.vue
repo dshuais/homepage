@@ -33,6 +33,7 @@ css({
       gap: '{space.2}',
       padding: '{space.1} {space.2}',
       background: '{color.gray.100}',
+      opacity: '0.6',
       '@dark': {
         color: '{color.gray.400}',
         borderColor: '{color.gray.800}',
