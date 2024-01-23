@@ -102,7 +102,8 @@ css({
         gridColumn: 'span 4 / span 4',
         justifyContent: 'center',
         flex: '1',
-        zIndex: '1'
+        zIndex: '1',
+        pointerEvents: 'none'
       },
       '&.right': {
         display: 'flex',
