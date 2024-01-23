@@ -159,6 +159,10 @@ css({
         outline: 'none',
         transition: 'background 200ms ease',
         fontWeight: '{fontWeight.semibold}',
+        color: '{color.gray.600}',
+        '@dark': {
+          color: '{color.gray.400}',
+        },
 
         svg: {
           display: 'inline-block'
@@ -174,9 +178,10 @@ css({
         '&:active,&.active,&:hover': {
           color: '{color.primary.500}',
           // backgroundColor: '{color.gray.100}',
-          // '@dark': {
+          '@dark': {
+            color: '{color.primary.500}',
           // backgroundColor: '{color.gray.900}',
-          // },
+          },
         },
         // '&.active': {
         //   boxShadow: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
@@ -215,6 +220,10 @@ css({
             cursor: 'pointer',
             transition: 'all 0.2s',
             marginBottom: '2px',
+            color: '{color.gray.600}',
+            '@dark': {
+              color: '{color.gray.400}',
+            },
             '&:last-child': {
               marginBottom: '0px',
             },
@@ -222,6 +231,7 @@ css({
               color: '{color.primary.500}',
               backgroundColor: '{color.gray.100}',
               '@dark': {
+                color: '{color.primary.500}',
                 backgroundColor: '{color.gray.800}',
               },
             },
