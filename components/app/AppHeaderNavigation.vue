@@ -31,6 +31,14 @@ const isActive = (link: any) => {
       ? route.fullPath === link._path
       : route.fullPath.startsWith(link._path)
 }
+
+/**
+ * 判断是否是http链接
+ * @param link
+ */
+const isHttp = (link: any) => {
+  return link._path.includes('http')
+}
 </script>
 
 <template>
@@ -38,15 +46,34 @@ const isActive = (link: any) => {
     <div class="line bg-gray-200 dark:bg-gray-700" />
     <ul>
       <li v-for="link in tree" :key="link._path">
-        <div v-if="link.collapse" class="link collapse-link">
-          {{ link.title }}
-        </div>
-        <div v-if="link.collapse" class="collapse-content rounded-md border shadow-xl">
-          <div v-for="(item, i) in link.collapseList" :key="i" class="menu-link rounded-lg">
-            {{ item.title }}
-            <img class="menu-icon" src="data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' %3E%3Cpath d='M0 0h24v24H0V0z' fill='none' /%3E%3Cpath d='M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z' /%3E%3C/svg%3E" alt="">
+        <template v-if="link.collapse">
+          <div class="link collapse-link" :class="{ active: isActive(link) }">
+            {{ link.title }}
           </div>
-        </div>
+          <div class="collapse-content rounded-2xl border shadow-xl">
+            <div
+              v-for="(item, i) in link.collapseList"
+              :key="i"
+              class="menu-link rounded-lg"
+            >
+              <NuxtLink
+                :to="item.redirect ? item.redirect : navBottomLink(item)"
+                :class="{ active: isActive(item) }"
+              >
+                {{ item.title }}
+              </NuxtLink>
+              <svg
+                v-if="isHttp(link)"
+                class="menu-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z" />
+              </svg>
+            </div>
+          </div>
+        </template>
 
         <NuxtLink
           v-else
@@ -156,27 +183,28 @@ css({
           top: '100%',
           right: 0,
           background: '{elements-backdrop-background}',
-          borderColor: '{color.gray.200}',
+          borderColor: '{color.gray.300}',
           opacity: '0',
           pointerEvents: 'none', // Disable pointer events to prevent interaction
           transition: 'all 0.3s',
           visibility: 'hidden',
-          padding: '{space.3}',
+          padding: '12px',
           '@dark': {
             borderColor: '{color.gray.700}',
           },
           '.menu-link': {
-            padding: '0 {space.2}',
+            padding: '0 12px',
             lineHeight: '32px',
             whiteSpace: 'nowrap',
             fontWeight: '500',
             cursor: 'pointer',
-            transition: 'all 0.3s',
+            transition: 'all 0.2s',
             marginBottom: '2px',
             display: 'flex',
             alignItems: 'center',
+            minWidth: '128px',
             '&:last-child': {
-            marginBottom: '0px',
+              marginBottom: '0px',
             },
             '&:hover': {
               color: '{color.primary.500}',
@@ -189,7 +217,13 @@ css({
               width: '11px',
               height: '11px',
               marginLeft: '4px',
-            }
+              flexShrink: '0',
+              // marginRight: '12px',
+              fill: '{color.gray.500}',
+            },
+            '.active': {
+              color: '{color.primary.500}',
+            },
           }
         },
     }

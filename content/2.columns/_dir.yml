@@ -9,6 +9,6 @@ footer: footer
 collapse: true
 collapseList: 
   - title: 从0到1搭建Vue 3组件库
-    href: /columns/create-keep-design/
-  - title: Vitepress搭建官网和博客
-    href: /columns/vitepress/
+    _path: /columns/create-keep-design/
+  - title: 使用Vitepress搭建官网和博客
+    _path: /columns/vitepress/
