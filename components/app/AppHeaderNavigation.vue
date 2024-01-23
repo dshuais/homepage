@@ -22,8 +22,6 @@ tree.value.unshift({
   _path: '/',
 })
 
-console.log('tree', tree.value, navigation.value, route.fullPath)
-
 const isActive = (link: any) => {
   if (link._path === '/') return route.fullPath === '/'
   else
@@ -49,6 +47,18 @@ const isHttp = (link: any) => {
         <template v-if="link.collapse">
           <div class="link collapse-link" :class="{ active: isActive(link) }">
             {{ link.title }}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
+              viewBox="0 0 24 24"
+              class="collapse-icon"
+              data-v-91fe948a=""
+            >
+              <path
+                d="M12,16c-0.3,0-0.5-0.1-0.7-0.3l-6-6c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l5.3,5.3l5.3-5.3c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-6,6C12.5,15.9,12.3,16,12,16z"
+              />
+            </svg>
           </div>
           <div class="collapse-content rounded-2xl border shadow-xl">
             <div
@@ -57,20 +67,22 @@ const isHttp = (link: any) => {
               class="menu-link rounded-lg"
             >
               <NuxtLink
+                class="menu-nuxt-link"
+                :target="isHttp(item) ? '_blank' : '_self'"
                 :to="item.redirect ? item.redirect : navBottomLink(item)"
                 :class="{ active: isActive(item) }"
               >
                 {{ item.title }}
+                <svg
+                  v-if="isHttp(item)"
+                  class="menu-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M0 0h24v24H0V0z" fill="none" />
+                  <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z" />
+                </svg>
               </NuxtLink>
-              <svg
-                v-if="isHttp(link)"
-                class="menu-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <path d="M0 0h24v24H0V0z" fill="none" />
-                <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z" />
-              </svg>
             </div>
           </div>
         </template>
@@ -137,7 +149,6 @@ css({
           },
         }
       },
-
       '.link': {
         display: 'flex',
         alignItems: 'center',
@@ -160,7 +171,6 @@ css({
           width: '{docus.app.navigation.link.icon.size} !important',
           height: '{docus.app.navigation.link.icon.size} !important',
         },
-
         '&:active,&.active,&:hover': {
           color: '{color.primary.500}',
           // backgroundColor: '{color.gray.100}',
@@ -168,7 +178,6 @@ css({
           // backgroundColor: '{color.gray.900}',
           // },
         },
-
         // '&.active': {
         //   boxShadow: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
         //   fontWeight: '{fontWeight.semibold}'
@@ -176,7 +185,13 @@ css({
       },
 
       '.collapse-link': {
-        cursor: 'pointer'
+        cursor: 'pointer',
+        '.collapse-icon': {
+          marginLeft: '-6px',
+          width: '14px',
+          height: '14px',
+          fill: 'currentColor',
+        },
       },
       '.collapse-content': {
           position: 'absolute',
@@ -200,9 +215,6 @@ css({
             cursor: 'pointer',
             transition: 'all 0.2s',
             marginBottom: '2px',
-            display: 'flex',
-            alignItems: 'center',
-            minWidth: '128px',
             '&:last-child': {
               marginBottom: '0px',
             },
@@ -224,6 +236,11 @@ css({
             '.active': {
               color: '{color.primary.500}',
             },
+            '.menu-nuxt-link': {
+              display: 'flex',
+              alignItems: 'center',
+              minWidth: '128px',
+            }
           }
         },
     }
