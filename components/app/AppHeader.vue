@@ -103,7 +103,6 @@ css({
         justifyContent: 'center',
         flex: '1',
         zIndex: '1',
-        pointerEvents: 'none'
       },
       '&.right': {
         display: 'flex',
@@ -112,6 +111,7 @@ css({
         alignItems: 'center',
         flex: 'none',
         marginRight: 'calc(0px - {space.4})',
+        zIndex: '2',
         '.social-icons': {
           display: 'none',
           position: 'relative',

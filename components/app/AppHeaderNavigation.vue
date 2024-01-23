@@ -8,6 +8,14 @@ const hasNavigation = computed(() => !!config.value.aside?.level)
 
 const filtered = computed(() => config.value.header?.exclude || [])
 
+if (navigation.value[0]._path != '/') {
+  // 向tree列表填入默认首页
+  navigation.value.unshift({
+    title: '首页',
+    _path: '/',
+  })
+}
+
 const tree = computed(() => {
   return (navigation.value || []).filter((item: any) => {
     if (filtered.value.includes(item._path as never)) {
@@ -15,11 +23,6 @@ const tree = computed(() => {
     }
     return true
   })
-})
-// 向tree列表填入默认首页
-tree.value.unshift({
-  title: '首页',
-  _path: '/',
 })
 
 const isActive = (link: any) => {
@@ -180,7 +183,7 @@ css({
           // backgroundColor: '{color.gray.100}',
           '@dark': {
             color: '{color.primary.500}',
-          // backgroundColor: '{color.gray.900}',
+            // backgroundColor: '{color.gray.900}',
           },
         },
         // '&.active': {
@@ -199,60 +202,60 @@ css({
         },
       },
       '.collapse-content': {
-          position: 'absolute',
-          top: '100%',
-          right: 0,
-          background: '{elements-backdrop-background}',
-          borderColor: '{color.gray.300}',
-          opacity: '0',
-          pointerEvents: 'none', // Disable pointer events to prevent interaction
-          transition: 'all 0.3s',
-          visibility: 'hidden',
-          padding: '12px',
-          '@dark': {
-            borderColor: '{color.gray.700}',
-          },
-          '.menu-link': {
-            padding: '0 12px',
-            lineHeight: '32px',
-            whiteSpace: 'nowrap',
-            fontWeight: '500',
-            cursor: 'pointer',
-            transition: 'all 0.2s',
-            marginBottom: '2px',
-            color: '{color.gray.600}',
-            '@dark': {
-              color: '{color.gray.400}',
-            },
-            '&:last-child': {
-              marginBottom: '0px',
-            },
-            '&:hover': {
-              color: '{color.primary.500}',
-              backgroundColor: '{color.gray.100}',
-              '@dark': {
-                color: '{color.primary.500}',
-                backgroundColor: '{color.gray.800}',
-              },
-            },
-            '.menu-icon': {
-              width: '11px',
-              height: '11px',
-              marginLeft: '4px',
-              flexShrink: '0',
-              // marginRight: '12px',
-              fill: '{color.gray.500}',
-            },
-            '.active': {
-              color: '{color.primary.500}',
-            },
-            '.menu-nuxt-link': {
-              display: 'flex',
-              alignItems: 'center',
-              minWidth: '128px',
-            }
-          }
+        position: 'absolute',
+        top: '100%',
+        right: 0,
+        background: '{elements-backdrop-background}',
+        borderColor: '{color.gray.300}',
+        opacity: '0',
+        pointerEvents: 'none', // Disable pointer events to prevent interaction
+        transition: 'all 0.3s',
+        visibility: 'hidden',
+        padding: '12px',
+        '@dark': {
+          borderColor: '{color.gray.700}',
         },
+        '.menu-link': {
+          padding: '0 12px',
+          lineHeight: '32px',
+          whiteSpace: 'nowrap',
+          fontWeight: '500',
+          cursor: 'pointer',
+          transition: 'all 0.2s',
+          marginBottom: '2px',
+          color: '{color.gray.600}',
+          '@dark': {
+            color: '{color.gray.400}',
+          },
+          '&:last-child': {
+            marginBottom: '0px',
+          },
+          '&:hover': {
+            color: '{color.primary.500}',
+            backgroundColor: '{color.gray.100}',
+            '@dark': {
+              color: '{color.primary.500}',
+              backgroundColor: '{color.gray.800}',
+            },
+          },
+          '.menu-icon': {
+            width: '11px',
+            height: '11px',
+            marginLeft: '4px',
+            flexShrink: '0',
+            // marginRight: '12px',
+            fill: '{color.gray.500}',
+          },
+          '.active': {
+            color: '{color.primary.500}',
+          },
+          '.menu-nuxt-link': {
+            display: 'flex',
+            alignItems: 'center',
+            minWidth: '128px',
+          }
+        }
+      },
     }
   }
 })
