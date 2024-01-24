@@ -28,5 +28,16 @@ import { VtText } from "@lehoczky/vue-termynal";
   <vt-text :lineDelay="200">✔ <span class="text-green-500">Danmaku-vue</span>:<br />&nbsp;&nbsp;
     Based on Vue 3 web pop-up interactive plug-in, light, easy to use, strong extensibility.
   </vt-text>
+  <br />
+  <vt-text :lineDelay="200">
+    ✨ For more interesting and fun experiments, please visit
+    <NuxtLink href="/labs" class="text-blue-500 font-bold select-none">
+      /LABS
+    </NuxtLink>
+  </vt-text>
 </template>
-<style scoped></style>
+<style scoped>
+.v-termynal .vt__line {
+  white-space: normal;
+}
+</style>

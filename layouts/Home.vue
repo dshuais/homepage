@@ -19,7 +19,7 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div class="relative">
+  <div class="relative pb-24">
     <HomeBanner badge-text="Beta" text="dshuais' blog has been updated." link="https://blog.dshuais.com/"
       link-text="Check it out →" />
 
