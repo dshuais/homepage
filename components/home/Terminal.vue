@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-23 18:26:02
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-24 18:28:34
+ * @LastEditTime: 2024-01-24 18:35:44
  * @description: bash
 -->
 <script setup lang="ts">
@@ -41,8 +41,7 @@ function scrollToTop(this: any) {
         </vt-text>
         <vt-input :typeDelay="50" :lineDelay="500">🔭 I’m currently working on WuHan.</vt-input>
         <vt-input :typeDelay="50" :lineDelay="500">🌱 I’m currently learning Vue & React & ReactNative & Node.</vt-input>
-        <vt-input :typeDelay="50" :lineDelay="1000">📫 How to reach me: <span
-            class="text-blue-500">dsshuai2020@163.com</span></vt-input>
+        <vt-input :typeDelay="50" :lineDelay="1000">📫 How to reach me: dsshuai2020@163.com</vt-input>
         <br />
         <vt-text :lineDelay="300">
           <HomeLinesDiamond />
@@ -55,8 +54,8 @@ function scrollToTop(this: any) {
           <HomeLinesDiamond />
         </vt-text>
         <!-- 我目前正在做 -->
-        <vt-input :typeDelay="50" :lineDelay="500">🚀 I'm currently doing it ...</vt-input>
-        <HomeLinesProject />
+        <vt-input :typeDelay="50" :lineDelay="500">🚀 I'm currently doing it ... </vt-input>
+        <!-- <HomeLinesProject /> -->
         <vt-input :typeDelay="60" :lineDelay="500">I hope it can help you.</vt-input>
 
         <!-- <HomeLinesSheepIcon /> -->
