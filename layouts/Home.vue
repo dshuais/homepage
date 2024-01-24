@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-22 11:26:44
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-23 18:28:12
+ * @LastEditTime: 2024-01-24 11:43:29
  * @description: home
 -->
 <script lang="ts" setup>
@@ -19,63 +19,43 @@ onMounted(() => {
 </script>
 <template>
   <div class="relative">
-    <HomeBanner
-      badge-text="Beta"
-      text="dshuais' blog has been updated."
-      link="https://blog.dshuais.com/"
-      link-text="Check it out →"
-    />
+    <HomeBanner badge-text="Beta" text="dshuais' blog has been updated." link="https://blog.dshuais.com/"
+      link-text="Check it out →" />
 
     <div class="relative">
       <section class="relative w-full min-h-[96vh] mt-20">
         <div class="max-w-5xl mx-auto text-center px-5 lg:px-0">
-          <h2 class="text-gray-300 tracking-wide">welcome to</h2>
-          <h1
-            class="StaticGradientText text-6xl lg:text-7xl font-bold tracking-tight"
-          >
-            dshuais' homepage
-          </h1>
+          <h2 class="text-gray-300 tracking-wide dark:text-gray-400">welcome to</h2>
+
+          <HomeTitle title="dshuais' homepage" />
+
           <h3 class="text-lg mt-8 text-gray-800 dark:text-gray-400">
-            Here is my personal home page, the main record of personal life and
-            learning thinking and summary, welcome to visit.
+            <!-- 欢迎访问，这里是我的主页，在这里我主要用来记录我的学习历程和分享自己的实验成果，如果刚好帮到你，你可以打开GitHub并给予一颗星 -->
+            Welcome to visit, here is my home page, where I mainly used to record my learning process and share their own
+            experimental results, if it just helps you, you can open GitHub and give a star.
+            <br />
+            Please move my notes and blog to the new address:
           </h3>
         </div>
 
         <div
-          class="relative mx-auto flex items-center space-x-5 w-full justify-center mt-5 px-5 lg:px-0 flex-col lg:flex-row"
-        >
-          <ButtonLink href="/about"> Know More About → </ButtonLink>
-          <NuxtLink
-            href="https://github.com/dshuais/homepage"
-            target="_blank"
-            class="text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white font-bold mt-4 lg:mt-0"
-          >
+          class="relative mx-auto flex items-center space-x-5 w-full justify-center mt-5 px-5 lg:px-0 flex-col lg:flex-row">
+          <ButtonLink class="getStartBtn" href="/about"> Know More About → </ButtonLink>
+          <NuxtLink href="https://github.com/dshuais/homepage" target="_blank"
+            class="text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white font-bold mt-4 lg:mt-0 select-none">
             Open on GitHub and give a star
           </NuxtLink>
         </div>
 
         <div class="relative mt-10 lg:mt-24 overflow-x-clip">
-          <div
-            data-aos="zoom-in"
-            data-aos-duration="1000"
-            data-aos-delay="300"
-            class="max-w-5xl mx-auto"
-          >
-            <div
-              class="SpinAnimation absolute w-[400px] h-[400px] left-[-100px] top-[70px] bg-green-700 rounded-full"
-            />
-            <div
-              class="SpinAnimation absolute w-[400px] h-[400px] left-[50%] bg-blue-700 rounded-full"
-              style="animation-duration: 10000ms"
-            />
-            <div
-              class="SpinAnimation absolute w-[400px] h-[400px] right-[50%] bg-pink-700 rounded-full"
-              style="animation-direction: reverse; animation-duration: 8000ms"
-            />
-            <div
-              class="SpinAnimation absolute w-[400px] h-[400px] right-[-100px] top-[150px] bg-yellow-700 rounded-full"
-              style="animation-direction: reverse; animation-duration: 10000ms"
-            />
+          <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300" class="max-w-5xl mx-auto">
+            <div class="SpinAnimation absolute w-[400px] h-[400px] left-[-100px] top-[70px] bg-green-700 rounded-full" />
+            <div class="SpinAnimation absolute w-[400px] h-[400px] left-[50%] bg-blue-700 rounded-full"
+              style="animation-duration: 10000ms" />
+            <div class="SpinAnimation absolute w-[400px] h-[400px] right-[50%] bg-pink-700 rounded-full"
+              style="animation-direction: reverse; animation-duration: 8000ms" />
+            <div class="SpinAnimation absolute w-[400px] h-[400px] right-[-100px] top-[150px] bg-yellow-700 rounded-full"
+              style="animation-direction: reverse; animation-duration: 10000ms" />
           </div>
 
           <div class="max-w-5xl px-5 lg:px-0 mx-auto">
@@ -106,13 +86,21 @@ onMounted(() => {
   </div>
 </template>
 <style scoped>
-.StaticGradientText {
+.getStartBtn {
   background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 1.3;
+  border: none !important;
+  user-select: none;
+  transition: box-shadow 0.6s;
+  border-radius: 0.75rem;
+  position: relative;
+  padding: 0.1rem 1.5rem;
+  line-height: 3rem;
 }
+
+.getStartBtn:hover {
+  box-shadow: 0 0 60px 2px #42d392, 0.5rem 0.5rem 30px #647eff;
+}
+
 .SpinAnimation {
   animation: linear 7000ms spin infinite;
   transform-origin: center 35% 0;
@@ -124,6 +112,7 @@ onMounted(() => {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

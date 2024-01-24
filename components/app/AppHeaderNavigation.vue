@@ -11,7 +11,7 @@ const filtered = computed(() => config.value.header?.exclude || [])
 if (navigation.value[0]._path != '/') {
   // 向tree列表填入默认首页
   navigation.value.unshift({
-    title: '首页',
+    title: 'Home',
     _path: '/',
   })
 }
@@ -50,38 +50,18 @@ const isHttp = (link: any) => {
         <template v-if="link.collapse">
           <div class="link collapse-link" :class="{ active: isActive(link) }">
             {{ link.title }}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              focusable="false"
-              viewBox="0 0 24 24"
-              class="collapse-icon"
-              data-v-91fe948a=""
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 24 24"
+              class="collapse-icon" data-v-91fe948a="">
               <path
-                d="M12,16c-0.3,0-0.5-0.1-0.7-0.3l-6-6c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l5.3,5.3l5.3-5.3c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-6,6C12.5,15.9,12.3,16,12,16z"
-              />
+                d="M12,16c-0.3,0-0.5-0.1-0.7-0.3l-6-6c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l5.3,5.3l5.3-5.3c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-6,6C12.5,15.9,12.3,16,12,16z" />
             </svg>
           </div>
           <div class="collapse-content rounded-2xl border shadow-xl">
-            <div
-              v-for="(item, i) in link.collapseList"
-              :key="i"
-              class="menu-link rounded-lg"
-            >
-              <NuxtLink
-                class="menu-nuxt-link"
-                :target="isHttp(item) ? '_blank' : '_self'"
-                :to="item.redirect ? item.redirect : navBottomLink(item)"
-                :class="{ active: isActive(item) }"
-              >
+            <div v-for="(item, i) in link.collapseList" :key="i" class="menu-link rounded-lg">
+              <NuxtLink class="menu-nuxt-link" :target="isHttp(item) ? '_blank' : '_self'"
+                :to="item.redirect ? item.redirect : navBottomLink(item)" :class="{ active: isActive(item) }">
                 {{ item.title }}
-                <svg
-                  v-if="isHttp(item)"
-                  class="menu-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
+                <svg v-if="isHttp(item)" class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                   <path d="M0 0h24v24H0V0z" fill="none" />
                   <path d="M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z" />
                 </svg>
@@ -90,16 +70,9 @@ const isHttp = (link: any) => {
           </div>
         </template>
 
-        <NuxtLink
-          v-else
-          class="link"
-          :to="link.redirect ? link.redirect : navBottomLink(link)"
-          :class="{ active: isActive(link) }"
-        >
-          <Icon
-            v-if="link.icon && config?.header?.showLinkIcon"
-            :name="link.icon"
-          />
+        <NuxtLink v-else class="link" :to="link.redirect ? link.redirect : navBottomLink(link)"
+          :class="{ active: isActive(link) }">
+          <Icon v-if="link.icon && config?.header?.showLinkIcon" :name="link.icon" />
           {{ link.title }}
         </NuxtLink>
       </li>
