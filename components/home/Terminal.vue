@@ -2,27 +2,23 @@
  * @Author: dushuai
  * @Date: 2024-01-23 18:26:02
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-24 16:37:10
+ * @LastEditTime: 2024-01-24 18:28:34
  * @description: bash
 -->
 <script setup lang="ts">
 import { VTermynal, VtInput, VtProgress, VtSpinner, VtText, } from "@lehoczky/vue-termynal";
 
-const nextId = ref<string>("");
 const container = ref<HTMLElement>();
 
 function scrollToNewLine(line: any) {
-  console.log("scrollToNewLine:>> ", line, 'id', line.id);
   if (line.id === "no-scroll") {
     return;
   }
-  nextId.value = line.id;
 
   const containerElement = container.value as HTMLElement;
-
   if (line.offsetTop - line.offsetHeight > containerElement.offsetHeight) {
     containerElement.scrollTo({
-      top: line.offsetTop - line.offsetHeight - containerElement.offsetHeight + 100,
+      top: line.offsetTop - line.offsetHeight - containerElement.offsetHeight,
       behavior: "smooth",
     });
   }
@@ -35,24 +31,33 @@ function scrollToTop(this: any) {
 </script>
 <template>
   <div data-aos="fade-up" data-aos-delay="100" class="relative w-full">
-    <v-termynal class="AnimatedTerminal" forward-button restart-button lazy>
+    <v-termynal class="AnimatedTerminal" forward-button restart-button lazy @before-new-line="scrollToNewLine($event)"
+      @restart="scrollToTop()">
       <div ref="container" class="line-container">
         <vt-input :lineDelay="500">Hi there 👋</vt-input>
         <vt-input :lineDelay="500">I am</vt-input>
         <vt-text :lineDelay="1000">
           <HomeLinesDsIcon />
         </vt-text>
-        <vt-input :typeDelay="60" :lineDelay="500">🔭 I’m currently working on WuHan.</vt-input>
-        <vt-input :typeDelay="60" :lineDelay="500">🌱 I’m currently learning Vue & React & ReactNative & Node.</vt-input>
-        <vt-input :typeDelay="60" :lineDelay="1000">📫 How to reach me: dsshuai2020@163.com</vt-input>
+        <vt-input :typeDelay="50" :lineDelay="500">🔭 I’m currently working on WuHan.</vt-input>
+        <vt-input :typeDelay="50" :lineDelay="500">🌱 I’m currently learning Vue & React & ReactNative & Node.</vt-input>
+        <vt-input :typeDelay="50" :lineDelay="1000">📫 How to reach me: <span
+            class="text-blue-500">dsshuai2020@163.com</span></vt-input>
         <br />
         <vt-text :lineDelay="300">
           <HomeLinesDiamond />
         </vt-text>
-        <vt-input :typeDelay="60" :lineDelay="500">This website is mainly used to record my learning process and some
+        <!-- 本网站主要是用来记录我的学习过程和一些实验结果 -->
+        <vt-input :typeDelay="50" :lineDelay="500">This website is mainly used to record my learning process and some
           experimental results. </vt-input>
-
-
+        <br />
+        <vt-text :lineDelay="300">
+          <HomeLinesDiamond />
+        </vt-text>
+        <!-- 我目前正在做 -->
+        <vt-input :typeDelay="50" :lineDelay="500">🚀 I'm currently doing it ...</vt-input>
+        <HomeLinesProject />
+        <vt-input :typeDelay="60" :lineDelay="500">I hope it can help you.</vt-input>
 
         <!-- <HomeLinesSheepIcon /> -->
         <!-- <vt-text :lineDelay="0">Welcome to
