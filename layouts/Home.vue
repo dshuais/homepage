@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-22 11:26:44
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-24 11:43:29
+ * @LastEditTime: 2024-01-24 11:49:22
  * @description: home
 -->
 <script lang="ts" setup>
@@ -34,12 +34,16 @@ onMounted(() => {
             Welcome to visit, here is my home page, where I mainly used to record my learning process and share their own
             experimental results, if it just helps you, you can open GitHub and give a star.
             <br />
-            Please move my notes and blog to the new address:
+            Blogs and notes are accessible:
+            <NuxtLink href="https://blog.dshuais.com" target="_blank"
+              class="text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white font-bold select-none">
+              blog.dshuais.com
+            </NuxtLink>
           </h3>
         </div>
 
         <div
-          class="relative mx-auto flex items-center space-x-5 w-full justify-center mt-5 px-5 lg:px-0 flex-col lg:flex-row">
+          class="relative mx-auto flex items-center space-x-5 w-full justify-center mt-8 px-5 lg:px-0 flex-col lg:flex-row">
           <ButtonLink class="getStartBtn" href="/about"> Know More About → </ButtonLink>
           <NuxtLink href="https://github.com/dshuais/homepage" target="_blank"
             class="text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white font-bold mt-4 lg:mt-0 select-none">

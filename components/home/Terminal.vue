@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-23 18:26:02
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-23 18:39:08
+ * @LastEditTime: 2024-01-24 12:09:51
  * @description: bash
 -->
 <script setup lang="ts">
@@ -12,6 +12,7 @@ const nextId = ref<string>("");
 const container = ref<HTMLElement>();
 
 function scrollToNewLine(line: any) {
+  console.log("scrollToNewLine:>> ", line, 'id', line.id);
   if (line.id === "no-scroll") {
     return;
   }
