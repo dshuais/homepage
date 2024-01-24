@@ -17,7 +17,7 @@ function scrollToNewLine(line: any) {
   const containerElement = container.value as HTMLElement;
   if (line.offsetTop - line.offsetHeight > containerElement.offsetHeight) {
     containerElement.scrollTo({
-      top: line.offsetTop - line.offsetHeight - containerElement.offsetHeight,
+      top: line.offsetTop - line.offsetHeight - containerElement.offsetHeight + 100,
       behavior: "smooth",
     });
   }
@@ -68,8 +68,15 @@ function scrollToTop(this: any) {
         <vt-text :lineDelay="300">
           <HomeLinesDiamond />
         </vt-text>
-        <vt-input :typeDelay="45" :lineDelay="500">I hope it can help you.</vt-input>
+        <vt-input :typeDelay="45" :lineDelay="500">So Long, and Thanks for visit, I hope it can help you.</vt-input>
+        <br />
+        <vt-text :lineDelay="0">🐑 Blogs and notes? at
+          <NuxtLink href="https://blog.dshuais.com/" target="_blank" class="text-blue-500 font-bold">
+            https://blog.dshuais.com
+          </NuxtLink>
+        </vt-text>
       </div>
+
     </v-termynal>
   </div>
 </template>

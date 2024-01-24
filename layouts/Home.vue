@@ -38,7 +38,7 @@ onMounted(() => {
             <span class="mt-2 block">
               Blogs and notes are accessible:
               <NuxtLink href="https://blog.dshuais.com/" target="_blank"
-                class="text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white font-bold select-none">
+                class="text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white font-bold">
                 blog.dshuais.com
               </NuxtLink>
             </span>
