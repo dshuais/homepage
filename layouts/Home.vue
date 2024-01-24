@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-22 11:26:44
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-24 11:49:22
+ * @LastEditTime: 2024-01-24 15:14:28
  * @description: home
 -->
 <script lang="ts" setup>
@@ -25,7 +25,7 @@ onMounted(() => {
     <div class="relative">
       <section class="relative w-full min-h-[96vh] mt-20">
         <div class="max-w-5xl mx-auto text-center px-5 lg:px-0">
-          <h2 class="text-gray-300 tracking-wide dark:text-gray-400">welcome to</h2>
+          <h2 class="text-gray-200 tracking-wide dark:text-gray-600">HELLO WORLD !</h2>
 
           <HomeTitle title="dshuais' homepage" />
 
@@ -34,18 +34,20 @@ onMounted(() => {
             Welcome to visit, here is my home page, where I mainly used to record my learning process and share their own
             experimental results, if it just helps you, you can open GitHub and give a star.
             <br />
-            Blogs and notes are accessible:
-            <NuxtLink href="https://blog.dshuais.com" target="_blank"
-              class="text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white font-bold select-none">
-              blog.dshuais.com
-            </NuxtLink>
+            <span class="mt-2 block">
+              Blogs and notes are accessible:
+              <NuxtLink href="https://blog.dshuais.com/" target="_blank"
+                class="text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white font-bold select-none">
+                blog.dshuais.com
+              </NuxtLink>
+            </span>
           </h3>
         </div>
 
         <div
           class="relative mx-auto flex items-center space-x-5 w-full justify-center mt-8 px-5 lg:px-0 flex-col lg:flex-row">
           <ButtonLink class="getStartBtn" href="/about"> Know More About → </ButtonLink>
-          <NuxtLink href="https://github.com/dshuais/homepage" target="_blank"
+          <NuxtLink href="https://github.com/dshuais/homepage/" target="_blank"
             class="text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white font-bold mt-4 lg:mt-0 select-none">
             Open on GitHub and give a star
           </NuxtLink>

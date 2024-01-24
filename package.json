@@ -8,7 +8,7 @@
     "generate": "nuxi generate",
     "preview": "nuxi preview",
     "lint": "eslint .",
-    "deploy": "sh ./deploy/deploy.sh"
+    "docs:deploy": "sh ./deploy/deploy.sh"
   },
   "devDependencies": {
     "@docsearch/js": "^3.5.2",

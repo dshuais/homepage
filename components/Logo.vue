@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-22 11:26:44
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-22 15:23:08
+ * @LastEditTime: 2024-01-24 15:07:17
  * @description: Logo
 -->
 <script setup lang="ts">
@@ -25,7 +25,7 @@ function animate() {
 
 </script>
 <template>
-  <div ref="dom" class="flex mr-8 logo">
+  <div ref="dom" class="flex logo">
     <!-- <img height="25" width="25" src="/logo.svg"> -->
     <h3 class="text-base ml-2">
       <!-- <span class="">Create </span><span class="text font-semibold">Keep Design</span> -->

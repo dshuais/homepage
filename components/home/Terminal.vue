@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-23 18:26:02
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-24 12:09:51
+ * @LastEditTime: 2024-01-24 14:19:19
  * @description: bash
 -->
 <script setup lang="ts">
@@ -35,11 +35,11 @@ function scrollToTop(this: any) {
 </script>
 <template>
   <div data-aos="fade-up" data-aos-delay="100" class="relative w-full">
-    <v-termynal @before-new-line="scrollToNewLine($event)" @restart="scrollToTop()" class="AnimatedTerminal">
+    <v-termynal class="AnimatedTerminal" forward-button restart-button lazy>
       <div ref="container" class="line-container">
         <vt-input>npm create sidebase@latest</vt-input>
         <vt-text :lineDelay="0">
-          <!-- <SheepIcon /> -->
+          <HomeLinesSheepIcon />
         </vt-text>
         <vt-text :lineDelay="0">
           <!-- <DiamondSeparator /> -->
