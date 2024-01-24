@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-23 18:26:02
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-24 14:19:19
+ * @LastEditTime: 2024-01-24 16:37:10
  * @description: bash
 -->
 <script setup lang="ts">
@@ -37,23 +37,34 @@ function scrollToTop(this: any) {
   <div data-aos="fade-up" data-aos-delay="100" class="relative w-full">
     <v-termynal class="AnimatedTerminal" forward-button restart-button lazy>
       <div ref="container" class="line-container">
-        <vt-input>npm create sidebase@latest</vt-input>
-        <vt-text :lineDelay="0">
-          <HomeLinesSheepIcon />
+        <vt-input :lineDelay="500">Hi there 👋</vt-input>
+        <vt-input :lineDelay="500">I am</vt-input>
+        <vt-text :lineDelay="1000">
+          <HomeLinesDsIcon />
         </vt-text>
-        <vt-text :lineDelay="0">
-          <!-- <DiamondSeparator /> -->
+        <vt-input :typeDelay="60" :lineDelay="500">🔭 I’m currently working on WuHan.</vt-input>
+        <vt-input :typeDelay="60" :lineDelay="500">🌱 I’m currently learning Vue & React & ReactNative & Node.</vt-input>
+        <vt-input :typeDelay="60" :lineDelay="1000">📫 How to reach me: dsshuai2020@163.com</vt-input>
+        <br />
+        <vt-text :lineDelay="300">
+          <HomeLinesDiamond />
         </vt-text>
-        <vt-text :lineDelay="0">Welcome to
+        <vt-input :typeDelay="60" :lineDelay="500">This website is mainly used to record my learning process and some
+          experimental results. </vt-input>
+
+
+
+        <!-- <HomeLinesSheepIcon /> -->
+        <!-- <vt-text :lineDelay="0">Welcome to
           <span class="text-green-500 font-bold">sidebase v0.3.0!</span></vt-text>
-        <vt-text :lineDelay="0">
-          <!-- <DiamondSeparator /> -->
-        </vt-text>
+        <vt-text :lineDelay="0"> -->
+        <!-- <DiamondSeparator /> -->
+        <!-- </vt-text>
         <vt-text :lineDelay="0">sidebase helps you to create fully typesafe Nuxt 3 app in
           seconds!</vt-text>
         <br />
         <vt-text :lineDelay="1000">What will your project be called?
-          <span class="font-bold text-gray-500">my-first-sidebase-project</span></vt-text>
+          <span class="font-bold text-gray-500">my-first-sidebase-project</span></vt-text> -->
         <!-- <StackInputSelect :next-id="nextId" />
         <ModulesInputSelect :next-id="nextId" />
         <GitInputSelect :next-id="nextId" />

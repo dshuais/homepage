@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-22 11:26:44
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-24 15:14:28
+ * @LastEditTime: 2024-01-24 16:05:28
  * @description: home
 -->
 <script lang="ts" setup>
@@ -14,6 +14,7 @@ defineOptions({
 })
 
 onMounted(() => {
+  ThisLog()
   AOS.init()
 })
 </script>
