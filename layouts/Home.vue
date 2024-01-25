@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-22 11:26:44
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-25 10:27:44
+ * @LastEditTime: 2024-01-25 11:40:57
  * @description: home
 -->
 <script lang="ts" setup>
@@ -68,20 +68,20 @@ onMounted(() => {
           <div class="max-w-5xl px-5 lg:px-0 mx-auto">
             <div class="relative group rounded-lg overflow-hidden">
               <HomeTerminal />
-
-              <!-- <div class="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-100 group-hover:bg-black/50 transition grid place-items-center">
+              <!-- <div
+                class="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-100 group-hover:bg-black/50 transition grid place-items-center">
                 <div class="text-center">
                   <h1 class="text-4xl font-bold text-white">
                     Get started in one line!
                   </h1>
-                  <h3>
-                    Use our sidebase CLI to boostrap your project in minutes!
+                  <h3 class="text-white">
+                    Use our create-keep-design CLI to boostrap your project in minutes!
                   </h3>
                   <div class="flex items-center mt-4 space-x-2 mx-auto justify-center">
                     <span class="bg-black rounded-lg px-4 py-1 text-white">
-                      npm create sidebase@latest
+                      pnpm create keepdesign
                     </span>
-                    <CopyButton content="npm create sidebase@latest" />
+                    <CopyButton content="pnpm create keepdesign" />
                   </div>
                 </div>
               </div> -->
