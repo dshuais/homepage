@@ -1,7 +1,7 @@
 /* logo字体 */
 @font-face {
   font-family: 'Lucida Handwriting';
-  src: url('../fonts/LHANDW.TTF');
+  src: url('/fonts/LHANDW.TTF');
 }
 
 @media (max-width: 1024px) {
