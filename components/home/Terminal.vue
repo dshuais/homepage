@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-23 18:26:02
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-25 18:26:23
+ * @LastEditTime: 2024-01-25 18:28:07
  * @description: bash
 -->
 <script setup lang="ts">
@@ -68,9 +68,9 @@ function scrollToTop(this: any) {
         <vt-text :lineDelay="300">
           <HomeLinesDiamond />
         </vt-text>
-        <vt-input :typeDelay="45" :lineDelay="800">So Long, and Thanks for visit, I hope it can help you.</vt-input>
+        <vt-input :typeDelay="45" :lineDelay="1000">So Long, and Thanks for visit, I hope it can help you.</vt-input>
         <br />
-        <vt-text :lineDelay="0">✨ Blogs and notes? at
+        <vt-text :lineDelay="200">✨ Blogs and notes? at
           <NuxtLink href="https://blog.dshuais.com/" target="_blank" class="text-blue-500 font-bold">
             https://blog.dshuais.com
           </NuxtLink>
