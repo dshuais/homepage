@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-22 11:26:44
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-24 15:07:17
+ * @LastEditTime: 2024-01-25 10:22:16
  * @description: Logo
 -->
 <script setup lang="ts">
@@ -27,9 +27,9 @@ function animate() {
 <template>
   <div ref="dom" class="flex logo">
     <!-- <img height="25" width="25" src="/logo.svg"> -->
-    <h3 class="text-base ml-2">
+    <h3 class="text-base ml-2 font-bold logo-text">
       <!-- <span class="">Create </span><span class="text font-semibold">Keep Design</span> -->
-      <span>dshuais</span>
+      <span>dshuais'</span>
     </h3>
   </div>
 </template>
@@ -37,6 +37,10 @@ function animate() {
 .logo {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
+}
+
+.logo-text {
+  font-family: "Lucida Handwriting";
 }
 
 .text {

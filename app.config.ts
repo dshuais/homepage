@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-22 11:26:44
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-22 15:57:24
+ * @LastEditTime: 2024-01-25 10:08:46
  * @description: app.config
  */
 import { aside } from './config'
@@ -10,7 +10,7 @@ import { aside } from './config'
 export default defineAppConfig({
   docus: {
     // titleTemplate: "dshuais' blog",
-    title: "dshuais' blog",
+    title: "dshuais",
     description: 'A Vite+TypeScript based scaffolding for quickly building a Vue 3 component library development environment.',
     image: '/logo.png',
     url: 'https://www.dshuais.com/',
@@ -41,7 +41,7 @@ export default defineAppConfig({
       fluid: false,
       exclude: []
     },
-    
+
     footer: {
       fluid: false,
       credits: {

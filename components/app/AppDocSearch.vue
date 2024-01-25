@@ -1,3 +1,10 @@
+<!--
+ * @Author: dushuai
+ * @Date: 2024-01-22 11:26:44
+ * @LastEditors: dushuai
+ * @LastEditTime: 2024-01-25 10:21:35
+ * @description: 重写 algolia search
+-->
 <script setup lang="ts">
 const { element } = useDocSearch()
 
@@ -5,7 +12,7 @@ const onClick = () => element.value.querySelector('button').click()
 </script>
 
 <template>
-  <button type="button" aria-label="Search" @click="onClick">
+  <button class="lg:ml-4 ml-[-10px]" type="button" aria-label="Search" @click="onClick">
     <span class="content">
       <Icon name="heroicons-outline:search" />
       <span>Search</span>

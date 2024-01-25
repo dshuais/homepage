@@ -17,6 +17,7 @@ const props = defineProps<Props>()
 </template>
 <style scoped>
 .text {
+  /* font-family: "Lucida Handwriting"; */
   line-height: 1.3;
   background-clip: text;
   -webkit-background-clip: text;
