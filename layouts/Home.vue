@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-22 11:26:44
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-26 11:39:41
+ * @LastEditTime: 2024-01-26 17:42:54
  * @description: home
 -->
 <script lang="ts" setup>
@@ -32,9 +32,9 @@ onMounted(() => {
 
           <h3 class="text-lg mt-8 text-gray-800 dark:text-gray-400">
             <!-- 欢迎访问，这里是我的主页，在这里我主要用来记录我的学习历程和分享自己的实验成果，如果刚好帮到你，你可以打开GitHub并给予一颗星 -->
-            Welcome to visit, here is my home page, where I mainly used to record my learning process and share their
-            own
+            Welcome to visit, here is my home page, where I mainly used to record my learning process and share their own
             experimental results, if it just helps you, you can open GitHub and give a star.
+            I hope it can help you.
             <br />
             <span class="mt-2 block">
               Blogs and notes are accessible:
@@ -43,6 +43,7 @@ onMounted(() => {
                 blog.dshuais.com
               </NuxtLink>
             </span>
+            <!-- <div class="mt-1">I hope it can help you.</div> -->
           </h3>
         </div>
 
@@ -90,6 +91,25 @@ onMounted(() => {
           </div>
         </div>
       </section>
+
+      <section class="relative py-6" data-aos="fade-up">
+        <!-- <div class="absolute xl:top-[-300px] 2xl:top-[-500px] left-0 select-none">
+          <NuxtImg class="w-[100vw] hidden dark:block" src="/shading.webp" alt="Background Image" />
+        </div> -->
+        <div class="relative SidebaseContainer">
+          <div class="Heading">
+            <h1>
+              ✨ <span class="GradientTextPurple">Notes selection</span> !
+            </h1>
+            <p>
+              <!-- 主要用来记录我的学习笔记，以及学习过程中的一些思考和总结。欢迎光临指导。 -->
+              It is mainly used to record my learning notes, as well as some thinking and summary in the learning process.
+              Welcome to visit and comment.
+            </p>
+          </div>
+          <!-- <ModulesSection /> -->
+        </div>
+      </section>
     </div>
   </div>
 </template>
@@ -114,6 +134,46 @@ onMounted(() => {
   transform-origin: center 35% 0;
   filter: blur(80px);
   opacity: 75%;
+}
+
+.SidebaseContainer {
+  max-width: 80rem;
+  margin: auto auto 5rem;
+
+  @apply px-12 2xl:px-0;
+}
+
+.Heading {
+  margin: 100px 0 50px 0;
+}
+
+.Heading h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.Heading p {
+  max-width: 50rem;
+  font-size: 1.2rem;
+}
+
+.GradientTextPurple {
+  background: linear-gradient(to right, #42d392 10%, #647eff 40%, #798be9 60%, #42d392 90%);
+  background-size: 200% auto;
+
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shine 1s linear infinite;
+
+  @keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
 }
 
 @keyframes spin {
