@@ -48,7 +48,8 @@ function scrollToTop(this: any) {
           <HomeLinesDsIcon />
         </vt-text>
         <vt-input :typeDelay="45" :lineDelay="500">🔭 I’m currently working on WuHan.</vt-input>
-        <vt-input :typeDelay="45" :lineDelay="500">🌱 I’m currently learning Vue & React & ReactNative & Node.</vt-input>
+        <vt-input :typeDelay="45" :lineDelay="500">🌱 I’m currently learning Vue & Nuxt & React & ReactNative &
+          Node.</vt-input>
         <vt-input :typeDelay="45" :lineDelay="1000">📫 How to reach me: dsshuai2020@163.com</vt-input>
         <!-- <br />
         <vt-text :lineDelay="300">
