@@ -1,3 +1,10 @@
+/*
+ * @Author: dushuai
+ * @Date: 2024-01-26 15:51:21
+ * @LastEditors: dushuai
+ * @LastEditTime: 2024-01-26 16:37:38
+ * @description: HomeTitle
+ */
 import styles from './title.module.css'
 
 export type Props = {
@@ -5,7 +12,7 @@ export type Props = {
 }
 
 export default defineComponent({
-  name: 'Title',
+  name: 'HomeTitle',
   props: {
     title: {
       type: String as PropType<string>,
