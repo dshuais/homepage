@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-22 11:26:44
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-25 11:40:57
+ * @LastEditTime: 2024-01-26 11:39:41
  * @description: home
 -->
 <script lang="ts" setup>
@@ -32,7 +32,8 @@ onMounted(() => {
 
           <h3 class="text-lg mt-8 text-gray-800 dark:text-gray-400">
             <!-- 欢迎访问，这里是我的主页，在这里我主要用来记录我的学习历程和分享自己的实验成果，如果刚好帮到你，你可以打开GitHub并给予一颗星 -->
-            Welcome to visit, here is my home page, where I mainly used to record my learning process and share their own
+            Welcome to visit, here is my home page, where I mainly used to record my learning process and share their
+            own
             experimental results, if it just helps you, you can open GitHub and give a star.
             <br />
             <span class="mt-2 block">
