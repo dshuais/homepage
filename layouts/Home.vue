@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-22 11:26:44
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-26 17:42:54
+ * @LastEditTime: 2024-01-28 17:45:23
  * @description: home
 -->
 <script lang="ts" setup>
@@ -107,7 +107,7 @@ onMounted(() => {
               Welcome to visit and comment.
             </p>
           </div>
-          <!-- <ModulesSection /> -->
+          <HomeNotes />
         </div>
       </section>
     </div>
