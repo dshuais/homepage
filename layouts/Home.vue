@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-22 11:26:44
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-28 17:45:23
+ * @LastEditTime: 2024-01-28 19:35:07
  * @description: home
 -->
 <script lang="ts" setup>
@@ -140,7 +140,7 @@ onMounted(() => {
   max-width: 80rem;
   margin: auto auto 5rem;
 
-  @apply px-12 2xl:px-0;
+  @apply px-6 2xl:px-0;
 }
 
 .Heading {

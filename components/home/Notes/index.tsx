@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-28 17:37:23
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-28 19:22:02
+ * @LastEditTime: 2024-01-28 20:47:32
  * @Description: 笔记列表
  */
 // import HomeNotesCard from './card'
@@ -10,10 +10,45 @@
 export default defineComponent({
   name: 'HomeNotes',
   setup() {
+
+    const notes = ref([1, 2, 3, 4, 5, 6, 7, 8])
+
+    const elements = ref()
+
+    onMounted(() => {
+      elements.value = document.querySelectorAll('.note-card')
+
+      document.addEventListener('mousemove', move)
+    })
+
+    // onBeforeUnmount(() => {
+    //   document.removeEventListener('mousemove', move)
+    // })
+
+    /**
+     * 监听mousemove的回调
+     * @param {MouseEvent} event 
+     */
+    function move(event: MouseEvent) {
+      const x = event.pageX
+      const y = event.pageY
+
+      for (let i = 0; i < elements.value.length; i++) {
+        const item = elements.value[i],
+          rect = item.getBoundingClientRect(),
+          itemX = rect.left + window.scrollX,
+          itemY = rect.top + window.scrollY,
+          distanceX = x - itemX,
+          distanceY = y - itemY
+
+        item.style.setProperty('--x', `${distanceX}px`)
+        item.style.setProperty('--y', `${distanceY}px`)
+      }
+    }
+
     return () => (
-      <div class="notes bg-orange-200">
-        notes
-        <HomeNotesCard />
+      <div class="notes bg-orange-200 grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-4">
+        {notes.value.map((item: any) => <HomeNotesCard item={item} />)}
       </div>
     )
   }
