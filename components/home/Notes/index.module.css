@@ -1,23 +1,34 @@
+:root {
+  --box-shadow-color: #e2e8f0;
+  --mask-hover-color: rgb(255 255 255/ 0.9);
+}
+
+[data-theme="dark"] {
+  --box-shadow-color: #0f171c;
+  --mask-hover-color: rgb(15 23 28/ 0.9);
+}
+
+.note {
+  box-shadow: 0px 0px 0px 1px var(--box-shadow-color);
+}
+
 .note::before {
   content: "";
   position: absolute;
-  /* top: 0;
-  left: 0; */
-  width: calc(100% + 3px);
-  height: calc(100% + 3px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: radial-gradient(
     250px circle at var(--x) var(--y),
-    #00dc82 0,
+    #00c16a 0,
     transparent 100%
   );
 
   @apply rounded-xl;
 }
 
-.note .mask {
-  position: absolute;
-  inset: 3px;
+.note .mask:hover {
+  background-color: var(--mask-hover-color);
 }
