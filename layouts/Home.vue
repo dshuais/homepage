@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-22 11:26:44
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-29 10:15:33
+ * @LastEditTime: 2024-01-29 17:14:53
  * @description: home
 -->
 <script lang="ts" setup>
@@ -101,11 +101,21 @@ onMounted(() => {
             <h1>
               ✨ <span class="GradientTextPurple">Notes selection</span> !
             </h1>
-            <p>
-              <!-- 主要用来记录我的学习笔记，以及学习过程中的一些思考和总结。欢迎光临指导。 -->
-              It is mainly used to record my learning notes, as well as some thinking and summary in the learning process.
-              Welcome to visit and comment.
-            </p>
+            <div class="flex items-center justify-between">
+              <p>
+                <!-- 主要用来记录我的学习笔记，以及学习过程中的一些思考和总结。欢迎光临指导。 -->
+                It is mainly used to record my learning notes, as well as some thinking and summary in the learning
+                process.
+                Welcome to visit and comment.
+              </p>
+
+              <NuxtLink href="https://blog.dshuais.com/blog" target="_blank">
+                <div class="cursor-pointer flex items-center justify-end view-more relative font-bold pl-1 pr-2">
+                  View More
+                  <IconArrowsR class="arrows w-4 h-4 text-gray-600 dark:text-gray-200 ml-2" />
+                </div>
+              </NuxtLink>
+            </div>
           </div>
           <HomeNotes />
         </div>
@@ -155,6 +165,34 @@ onMounted(() => {
 .Heading p {
   max-width: 50rem;
   font-size: 1.2rem;
+}
+
+.view-more::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  background: -webkit-linear-gradient(315deg, #647eff -50%, #42d392);
+  transition: width 0.3s ease-out;
+}
+
+.arrows {
+  transition: all 0.22s ease-out;
+  transition-delay: 0.3s;
+}
+
+.view-more:hover::before {
+  width: 100%;
+}
+
+.view-more:hover {
+  .arrows {
+    transform: translateX(10px);
+    color: #00c16a;
+  }
 }
 
 .GradientTextPurple {
