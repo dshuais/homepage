@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-22 11:26:44
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-28 19:35:07
+ * @LastEditTime: 2024-01-29 10:15:33
  * @description: home
 -->
 <script lang="ts" setup>
@@ -26,7 +26,7 @@ onMounted(() => {
     <div class="relative">
       <section class="relative w-full min-h-[96vh] mt-20">
         <div class="max-w-5xl mx-auto text-center px-5 lg:px-0">
-          <h2 class="text-gray-200 tracking-wide dark:text-gray-600">HELLO WORLD !</h2>
+          <h2 class="text-gray-200 tracking-wide dark:text-gray-600 select-none">HELLO WORLD !</h2>
 
           <HomeTitle title="dshuais' homepage" />
 

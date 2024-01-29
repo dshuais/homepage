@@ -2,16 +2,15 @@
  * @Author: dushuai
  * @Date: 2024-01-28 17:37:23
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-29 09:55:33
+ * @LastEditTime: 2024-01-29 11:41:15
  * @Description: 笔记列表
  */
-// import HomeNotesCard from './card'
+// import { HomeNotesCard } from '#components' // 阻止使用时报错 报错也不影响
+import { type Note, notes } from '@/config'
 
 export default defineComponent({
   name: 'HomeNotes',
   setup() {
-
-    const notes = ref([1, 2, 3, 4, 5, 6, 7, 8])
 
     const elements = ref()
 
@@ -48,13 +47,18 @@ export default defineComponent({
 
     return () => (
       <div class="notes grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-8">
-        {notes.value.map((item: any) =>
+        {notes.slice(0, 7).map((item: Note) =>
           <HomeNotesCard>
-            <div class="py-16 p-3">
+            <div class="py-16 p-3 cursor-pointer">
               123
             </div>
           </HomeNotesCard>
         )}
+        <HomeNotesCard>
+          <div class="py-16 p-3 cursor-pointer flex items-center justify-end">
+            view more <IconArrowsR class="w-4 h-3 mt-[1px] fill-gray-600 dark:fill-gray-200" />
+          </div>
+        </HomeNotesCard>
       </div>
     )
   }

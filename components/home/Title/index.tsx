@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-26 15:51:21
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-26 16:37:38
+ * @LastEditTime: 2024-01-29 10:15:08
  * @description: HomeTitle
  */
 import styles from './title.module.css'
@@ -21,7 +21,7 @@ export default defineComponent({
   },
   setup(props: Props) {
     return () => (
-      <h1 class={['text-6xl lg:text-7xl font-bold tracking-tighter', styles.text]}>{props.title}</h1>
+      <h1 class={['text-6xl lg:text-7xl font-bold tracking-tighter select-none', styles.text]}>{props.title}</h1>
     )
   }
 })
