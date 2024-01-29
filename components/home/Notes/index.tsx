@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-28 17:37:23
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-29 15:18:27
+ * @LastEditTime: 2024-01-29 18:43:56
  * @Description: 笔记列表
  */
 // import { HomeNotesCard } from '#components' // 阻止使用时报错 报错也不影响
@@ -47,18 +47,23 @@ export default defineComponent({
 
     return () => (
       <div class="notes grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-8">
-        {notes.slice(0, 7).map((item: Note) =>
+        {notes.slice(0, 8).map((item: Note) =>
           <HomeNotesCard>
-            <div class="py-16 p-3 cursor-pointer">
-              123
+            <div class="cursor-pointer p-5 dark:text-gray-300">
+              <div class="text-xl">{item.icon}</div>
+              <div class="text-sm mt-2 tracking-wide">{item.title}</div>
+              <div class="flex items-center mt-4">
+                <NuxtImg class="w-12 h-12 rounded-full p-1 border-2 border-[#00c16a]" src={item.avatar} alt="Avatar Image" />
+                <div class="ml-4">
+                  <div class="text-xs text-gray-600">{item.userName}</div>
+                  <NuxtLink href={item.github} target="_blank"                  >
+                    <Icon name="akar-icons:github-fill" class="text-gray-600 hover:text-gray-950 hover:scale-150 transition" />
+                  </NuxtLink>
+                </div>
+              </div>
             </div>
           </HomeNotesCard>
         )}
-        {/* <HomeNotesCard>
-          <div class="py-16 p-3 cursor-pointer flex flex-col items-end">
-            View More <IconArrowsR class="w-8 h-4 mt-[1px] fill-gray-600 dark:fill-gray-200" />
-          </div>
-        </HomeNotesCard> */}
       </div>
     )
   }
