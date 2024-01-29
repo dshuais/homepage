@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-28 17:37:23
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-28 22:32:43
+ * @LastEditTime: 2024-01-29 09:55:33
  * @Description: 笔记列表
  */
 // import HomeNotesCard from './card'
@@ -48,7 +48,13 @@ export default defineComponent({
 
     return () => (
       <div class="notes grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-8">
-        {notes.value.map((item: any) => <HomeNotesCard item={item} />)}
+        {notes.value.map((item: any) =>
+          <HomeNotesCard>
+            <div class="py-16 p-3">
+              123
+            </div>
+          </HomeNotesCard>
+        )}
       </div>
     )
   }

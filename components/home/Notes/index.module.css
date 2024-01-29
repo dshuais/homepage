@@ -1,19 +1,19 @@
 :root {
-  --box-shadow-color: #e2e8f0;
-  --mask-hover-color: rgb(255 255 255/ 0.9);
+  --note-shadow-color: #e2e8f0;
+  --note-mask-bg: rgb(255 255 255/ 0.9);
 }
 
-[data-theme="dark"] {
-  --box-shadow-color: #0f171c;
-  --mask-hover-color: rgb(15 23 28/ 0.9);
+[data-theme='dark'] {
+  --note-shadow-color: #0f171c;
+  --note-mask-bg: rgb(15 23 28/ 0.9);
 }
 
 .note {
-  box-shadow: 0px 0px 0px 1px var(--box-shadow-color);
+  box-shadow: 0px 0px 0px 1px var(--note-shadow-color);
 }
 
 .note::before {
-  content: "";
+  content: '';
   position: absolute;
   width: calc(100% + 4px);
   height: calc(100% + 4px);
@@ -30,5 +30,5 @@
 }
 
 .note .mask:hover {
-  background-color: var(--mask-hover-color);
+  background-color: var(--note-mask-bg);
 }
