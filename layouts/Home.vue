@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-22 11:26:44
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-29 17:14:53
+ * @LastEditTime: 2024-01-30 11:29:05
  * @description: home
 -->
 <script lang="ts" setup>
@@ -20,7 +20,7 @@ onMounted(() => {
 </script>
 <template>
   <div class="relative pb-24">
-    <HomeBanner badge-text="Beta" text="dshuais' blog has been updated." link="https://blog.dshuais.com/"
+    <HomeBanner badge-text="Beta" text="dshuais' blog is being set up." link="https://blog.dshuais.com/"
       link-text="Check it out →" />
 
     <div class="relative">
@@ -104,9 +104,12 @@ onMounted(() => {
             <div class="flex items-center justify-between">
               <p>
                 <!-- 主要用来记录我的学习笔记，以及学习过程中的一些思考和总结。欢迎光临指导。 -->
-                It is mainly used to record my learning notes, as well as some thinking and summary in the learning
+                <!-- It is mainly used to record my learning notes, as well as some thinking and summary in the learning
                 process.
-                Welcome to visit and comment.
+                Welcome to visit and comment. -->
+
+                It is mainly used to record my study notes, as well as some thoughts and summaries in the learning
+                process. It will also reprint some other good articles.
               </p>
 
               <NuxtLink href="https://blog.dshuais.com/blog" target="_blank">

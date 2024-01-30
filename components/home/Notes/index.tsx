@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-28 17:37:23
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-29 18:43:56
+ * @LastEditTime: 2024-01-30 11:27:07
  * @Description: 笔记列表
  */
 // import { HomeNotesCard } from '#components' // 阻止使用时报错 报错也不影响
@@ -49,18 +49,23 @@ export default defineComponent({
       <div class="notes grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-8">
         {notes.slice(0, 8).map((item: Note) =>
           <HomeNotesCard>
-            <div class="cursor-pointer p-5 dark:text-gray-300">
-              <div class="text-xl">{item.icon}</div>
-              <div class="text-sm mt-2 tracking-wide">{item.title}</div>
-              <div class="flex items-center mt-4">
+            <div class="cursor-pointer p-5 dark:text-gray-200">
+              <div class="text-xl select-none">{item.icon}</div>
+              <div class="text-sm mt-3 tracking-wide font-bold">{item.title}</div>
+              <div class="text-xs mt-2 leading-5 tracking-wide text-gray-500 dark:text-gray-400">{item.content}</div>
+              <div class="text-xs mt-4 text-gray-400 dark:text-gray-600 scale-90 ml-[-14px]">{item.createTime}</div>
+              {/* <div class="flex items-center mt-4">
                 <NuxtImg class="w-12 h-12 rounded-full p-1 border-2 border-[#00c16a]" src={item.avatar} alt="Avatar Image" />
-                <div class="ml-4">
-                  <div class="text-xs text-gray-600">{item.userName}</div>
-                  <NuxtLink href={item.github} target="_blank"                  >
-                    <Icon name="akar-icons:github-fill" class="text-gray-600 hover:text-gray-950 hover:scale-150 transition" />
-                  </NuxtLink>
+                <div class="ml-2 text-gray-500">
+                  <div class="text-xs mr-2">{item.userName}</div>
+                  <div class="flex items-center text-xs mt-1">
+                    <div class="mr-2">Frontend Engineer</div>
+                    <NuxtLink href={item.github} target="_blank"                  >
+                      <Icon name="akar-icons:github-fill" class="hover:text-gray-950 hover:scale-150 transition mt-[-5px]  text-sm" />
+                    </NuxtLink>
+                  </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </HomeNotesCard>
         )}
