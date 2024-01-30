@@ -2,12 +2,13 @@
  * @Author: dushuai
  * @Date: 2024-01-29 10:28:14
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-30 17:12:14
+ * @LastEditTime: 2024-01-30 18:12:32
  * @description: 专栏推荐列表 降序
  */
 export type Column = {
   id: string;
   title: string;
+  content: string;
   link: string,
   avatar: string;
   userName: string;
@@ -23,6 +24,7 @@ export const columns: Columns[] = [
     {
       id: '1',
       title: '手把手教你开发自己的Vue 3组件库',
+      content: '手把手教你开发自己的Vue 3组件库手把手教你开发自己的Vue 3组件库',
       link: 'https://blog.dshuais.com/u=xxx',
       avatar: 'https://files.dshuais.com/images/avatar.png',
       userName: 'dshuais',
@@ -32,6 +34,7 @@ export const columns: Columns[] = [
     {
       id: '2',
       title: '手把手教你开发自己的Vue 3组件库',
+      content: '手把手教你开发自己的Vue 3组件库手把手教你开发自己的Vue 3组件库',
       link: 'https://blog.dshuais.com/u=xxx',
       avatar: 'https://files.dshuais.com/images/avatar.png',
       userName: 'dshuais',
@@ -43,6 +46,7 @@ export const columns: Columns[] = [
     {
       id: '1',
       title: '手把手教你开发自己的Vue 3组件库',
+      content: '手把手教你开发自己的Vue 3组件库手把手教你开发自己的Vue 3组件库',
       link: 'https://blog.dshuais.com/u=xxx',
       avatar: 'https://files.dshuais.com/images/avatar.png',
       userName: 'dshuais',
@@ -52,6 +56,7 @@ export const columns: Columns[] = [
     {
       id: '2',
       title: '手把手教你开发自己的Vue 3组件库',
+      content: '手把手教你开发自己的Vue 3组件库手把手教你开发自己的Vue 3组件库',
       link: 'https://blog.dshuais.com/u=xxx',
       avatar: 'https://files.dshuais.com/images/avatar.png',
       userName: 'dshuais',
@@ -63,6 +68,7 @@ export const columns: Columns[] = [
     {
       id: '1',
       title: '手把手教你开发自己的Vue 3组件库',
+      content: '手把手教你开发自己的Vue 3组件库手把手教你开发自己的Vue 3组件库',
       link: 'https://blog.dshuais.com/u=xxx',
       avatar: 'https://files.dshuais.com/images/avatar.png',
       userName: 'dshuais',
@@ -72,6 +78,7 @@ export const columns: Columns[] = [
     {
       id: '2',
       title: '手把手教你开发自己的Vue 3组件库',
+      content: '手把手教你开发自己的Vue 3组件库手把手教你开发自己的Vue 3组件库',
       link: 'https://blog.dshuais.com/u=xxx',
       avatar: 'https://files.dshuais.com/images/avatar.png',
       userName: 'dshuais',
