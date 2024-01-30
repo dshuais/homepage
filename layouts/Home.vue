@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-22 11:26:44
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-30 11:29:05
+ * @LastEditTime: 2024-01-30 12:10:40
  * @description: home
 -->
 <script lang="ts" setup>
@@ -99,7 +99,7 @@ onMounted(() => {
         <div class="relative SidebaseContainer">
           <div class="Heading">
             <h1>
-              ✨ <span class="GradientTextPurple">Notes selection</span> !
+              ✨ <span class="GradientTextPurple">Notes </span>selection !
             </h1>
             <div class="flex items-center justify-between">
               <p>
@@ -121,6 +121,30 @@ onMounted(() => {
             </div>
           </div>
           <HomeNotes />
+        </div>
+      </section>
+
+      <section class="relative py-6" data-aos="zoom-up">
+        <div class="relative SidebaseContainer">
+          <div class="Heading heading-column">
+            <h1>
+              🚀 <span class="ColumsText">Columns </span>recommend !
+            </h1>
+            <div class="flex items-center justify-between">
+              <p>
+                The column is mainly used to document the development process of my lab and share other research.
+                I hope it can help you.
+              </p>
+
+              <NuxtLink href="https://blog.dshuais.com/columns" target="_blank">
+                <div class="cursor-pointer flex items-center justify-end view-more-column relative font-bold pl-1 pr-2">
+                  View More
+                  <IconArrowsR class="arrows w-4 h-4 text-gray-600 dark:text-gray-200 ml-2" />
+                </div>
+              </NuxtLink>
+            </div>
+          </div>
+          <HomeColumns />
         </div>
       </section>
     </div>
@@ -170,6 +194,10 @@ onMounted(() => {
   font-size: 1.2rem;
 }
 
+.heading-column {
+  margin: 0 0 50px;
+}
+
 .view-more::before {
   content: "";
   display: block;
@@ -198,8 +226,50 @@ onMounted(() => {
   }
 }
 
+.view-more-column::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  background: -webkit-linear-gradient(315deg, #A083ED -50%, #EF7AC8);
+  transition: width 0.3s ease-out;
+}
+
+.view-more-column:hover::before {
+  width: 100%;
+}
+
+.view-more-column:hover {
+  .arrows {
+    transform: translateX(10px);
+    color: #EF7AC8;
+  }
+}
+
 .GradientTextPurple {
   background: linear-gradient(to right, #42d392 10%, #647eff 40%, #798be9 60%, #42d392 90%);
+  background-size: 200% auto;
+
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shine 1s linear infinite;
+
+  @keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
+}
+
+.ColumsText {
+  background: linear-gradient(to right, #EF7AC8 10%, #A083ED 40%, #b29deb 60%, #EF7AC8 90%);
   background-size: 200% auto;
 
   color: #000;
