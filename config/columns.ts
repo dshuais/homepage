@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-29 10:28:14
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-29 10:50:16
+ * @LastEditTime: 2024-01-30 17:12:14
  * @description: 专栏推荐列表 降序
  */
 export type Column = {
@@ -16,14 +16,67 @@ export type Column = {
   createTime: string;
 }
 
-export const columns: Column[] = [
-  {
-    id: '1',
-    title: '手把手教你开发自己的Vue 3组件库',
-    link: 'https://blog.dshuais.com/u=xxx',
-    avatar: 'https://files.dshuais.com/images/avatar.png',
-    userName: 'dshuais',
-    github: 'https://github.com/dshuais',
-    createTime: '2024-01-29 10:47'
-  }
+export type Columns = Column[];
+
+export const columns: Columns[] = [
+  [
+    {
+      id: '1',
+      title: '手把手教你开发自己的Vue 3组件库',
+      link: 'https://blog.dshuais.com/u=xxx',
+      avatar: 'https://files.dshuais.com/images/avatar.png',
+      userName: 'dshuais',
+      github: 'https://github.com/dshuais',
+      createTime: '2024-01-29 10:47'
+    },
+    {
+      id: '2',
+      title: '手把手教你开发自己的Vue 3组件库',
+      link: 'https://blog.dshuais.com/u=xxx',
+      avatar: 'https://files.dshuais.com/images/avatar.png',
+      userName: 'dshuais',
+      github: 'https://github.com/dshuais',
+      createTime: '2024-01-29 10:47'
+    }
+  ],
+  [
+    {
+      id: '1',
+      title: '手把手教你开发自己的Vue 3组件库',
+      link: 'https://blog.dshuais.com/u=xxx',
+      avatar: 'https://files.dshuais.com/images/avatar.png',
+      userName: 'dshuais',
+      github: 'https://github.com/dshuais',
+      createTime: '2024-01-29 10:47'
+    },
+    {
+      id: '2',
+      title: '手把手教你开发自己的Vue 3组件库',
+      link: 'https://blog.dshuais.com/u=xxx',
+      avatar: 'https://files.dshuais.com/images/avatar.png',
+      userName: 'dshuais',
+      github: 'https://github.com/dshuais',
+      createTime: '2024-01-29 10:47'
+    }
+  ],
+  [
+    {
+      id: '1',
+      title: '手把手教你开发自己的Vue 3组件库',
+      link: 'https://blog.dshuais.com/u=xxx',
+      avatar: 'https://files.dshuais.com/images/avatar.png',
+      userName: 'dshuais',
+      github: 'https://github.com/dshuais',
+      createTime: '2024-01-29 10:47'
+    },
+    {
+      id: '2',
+      title: '手把手教你开发自己的Vue 3组件库',
+      link: 'https://blog.dshuais.com/u=xxx',
+      avatar: 'https://files.dshuais.com/images/avatar.png',
+      userName: 'dshuais',
+      github: 'https://github.com/dshuais',
+      createTime: '2024-01-29 10:47'
+    }
+  ]
 ]
