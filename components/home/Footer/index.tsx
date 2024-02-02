@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-02 17:33:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-02 18:34:13
+ * @LastEditTime: 2024-02-02 18:35:23
  * @description: HomeFooter
  */
 import Lottie from 'lottie-web'
@@ -25,7 +25,7 @@ export default defineComponent({
     })
 
     return () => (
-      <div data-aos="" class="mx-auto px-6 py-16 lg:flex lg:items-center lg:justify-between lg:px-8 lg:w-[85rem] relative">
+      <div data-aos="zoom-up" class="mx-auto px-6 py-16 lg:flex lg:items-center lg:justify-between lg:px-8 lg:w-[85rem] relative">
         <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
           I hope it can help you!
           <br />
