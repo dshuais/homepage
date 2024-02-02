@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-29 10:28:14
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-30 18:12:32
+ * @LastEditTime: 2024-02-02 09:42:44
  * @description: 专栏推荐列表 降序
  */
 export type Column = {
@@ -10,11 +10,11 @@ export type Column = {
   title: string;
   content: string;
   link: string,
-  avatar: string;
-  userName: string;
+  avatar?: string;
+  userName?: string;
   description?: string;
-  github: string;
-  createTime: string;
+  github?: string;
+  updateTime: string;
 }
 
 export type Columns = Column[];
@@ -29,7 +29,7 @@ export const columns: Columns[] = [
       avatar: 'https://files.dshuais.com/images/avatar.png',
       userName: 'dshuais',
       github: 'https://github.com/dshuais',
-      createTime: '2024-01-29 10:47'
+      updateTime: '2024-01-29 10:47'
     },
     {
       id: '2',
@@ -39,7 +39,7 @@ export const columns: Columns[] = [
       avatar: 'https://files.dshuais.com/images/avatar.png',
       userName: 'dshuais',
       github: 'https://github.com/dshuais',
-      createTime: '2024-01-29 10:47'
+      updateTime: '2024-01-29 10:47'
     }
   ],
   [
@@ -51,7 +51,7 @@ export const columns: Columns[] = [
       avatar: 'https://files.dshuais.com/images/avatar.png',
       userName: 'dshuais',
       github: 'https://github.com/dshuais',
-      createTime: '2024-01-29 10:47'
+      updateTime: '2024-01-29 10:47'
     },
     {
       id: '2',
@@ -61,7 +61,7 @@ export const columns: Columns[] = [
       avatar: 'https://files.dshuais.com/images/avatar.png',
       userName: 'dshuais',
       github: 'https://github.com/dshuais',
-      createTime: '2024-01-29 10:47'
+      updateTime: '2024-01-29 10:47'
     }
   ],
   [
@@ -73,7 +73,7 @@ export const columns: Columns[] = [
       avatar: 'https://files.dshuais.com/images/avatar.png',
       userName: 'dshuais',
       github: 'https://github.com/dshuais',
-      createTime: '2024-01-29 10:47'
+      updateTime: '2024-01-29 10:47'
     },
     {
       id: '2',
@@ -83,7 +83,7 @@ export const columns: Columns[] = [
       avatar: 'https://files.dshuais.com/images/avatar.png',
       userName: 'dshuais',
       github: 'https://github.com/dshuais',
-      createTime: '2024-01-29 10:47'
+      updateTime: '2024-01-29 10:47'
     }
   ]
 ]
