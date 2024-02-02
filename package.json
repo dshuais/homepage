@@ -18,5 +18,8 @@
     "@types/aos": "^3.0.7",
     "aos": "^2.3.4",
     "nuxt": "3.9.3"
+  },
+  "dependencies": {
+    "lottie-web": "^5.12.2"
   }
 }
