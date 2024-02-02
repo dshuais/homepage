@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-22 11:26:44
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-02 16:13:29
+ * @LastEditTime: 2024-02-02 17:45:48
  * @description: home
 -->
 <script lang="ts" setup>
@@ -19,7 +19,7 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div class="relative pb-24">
+  <div class="relative">
     <HomeBanner badge-text="Beta" text="dshuais' blog is being set up." link="https://blog.dshuais.com/"
       link-text="Check it out →" />
 
@@ -149,6 +149,8 @@ onMounted(() => {
           <HomeColumns />
         </div>
       </section>
+
+      <HomeFooter />
     </div>
   </div>
 </template>
