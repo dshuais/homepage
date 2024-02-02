@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-22 11:26:44
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-30 12:10:40
+ * @LastEditTime: 2024-02-02 10:15:04
  * @description: home
 -->
 <script lang="ts" setup>
@@ -101,13 +101,12 @@ onMounted(() => {
             <h1>
               ✨ <span class="GradientTextPurple">Notes </span>selection !
             </h1>
-            <div class="flex items-center justify-between">
+            <div class="flex flex-col lg:flex-row items-center lg:justify-between">
               <p>
                 <!-- 主要用来记录我的学习笔记，以及学习过程中的一些思考和总结。欢迎光临指导。 -->
                 <!-- It is mainly used to record my learning notes, as well as some thinking and summary in the learning
                 process.
                 Welcome to visit and comment. -->
-
                 It is mainly used to record my study notes, as well as some thoughts and summaries in the learning
                 process. It will also reprint some other good articles.
               </p>
@@ -130,7 +129,7 @@ onMounted(() => {
             <h1>
               🚀 <span class="ColumsText">Columns </span>recommend !
             </h1>
-            <div class="flex items-center justify-between">
+            <div class="flex flex-col lg:flex-row items-center lg:justify-between">
               <p>
                 The column is mainly used to document the development process of my lab and share other research.
                 I hope it can help you.
