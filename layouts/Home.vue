@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-22 11:26:44
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-02 10:15:04
+ * @LastEditTime: 2024-02-02 16:13:29
  * @description: home
 -->
 <script lang="ts" setup>
@@ -124,6 +124,9 @@ onMounted(() => {
       </section>
 
       <section class="relative py-6" data-aos="zoom-up">
+        <div class="absolute bottom-0 left-0 select-none">
+          <NuxtImg class="w-[100vw] opacity-20 dark:opacity-50" src="/bottom.webp" alt="Background Image" />
+        </div>
         <div class="relative SidebaseContainer">
           <div class="Heading heading-column">
             <h1>
