@@ -8,19 +8,25 @@ const hasDialog = computed(() => navigation.value?.length > 1 || navigation.valu
 defineProps({
   ...variants
 })
+
+const page = ref<string>('home')
+
+
+watchEffect(() => {
+  const router = useRouter()
+  console.log('path', router);
+})
+
 </script>
 
 <template>
   <header :class="{ 'has-dialog': hasDialog }">
-    <Container :fluid="config?.header?.fluid ">
+    <Container :fluid="config?.header?.fluid">
       <div class="section left">
         <AppHeaderDialog v-if="hasDialog" />
         <AppHeaderLogo />
         <AppDocSearch v-if="hasDocSearch" />
-        <AppSearch
-          v-else
-          :fuse="config.fuse"
-        />
+        <AppSearch v-else :fuse="config.fuse" />
       </div>
 
       <div class="section center">
