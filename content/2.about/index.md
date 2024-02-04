@@ -1,6 +1,4 @@
 ---
 title: about
+layout: about
 ---
-
-
-正在构建中...

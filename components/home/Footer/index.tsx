@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-02 17:33:55
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-02 18:35:23
+ * @LastEditTime: 2024-02-04 10:47:52
  * @description: HomeFooter
  */
 import Lottie from 'lottie-web'
@@ -41,7 +41,7 @@ export default defineComponent({
             class="text-sm font-semibold leading-6 text-gray-900 dark:text-white">Visit blog website <span
               aria-hidden="true">→</span></a>
         </div>
-        <div ref={lottieDom} class="absolute h-full ml-[-40px]"></div>
+        <div ref={lottieDom} class="absolute h-full ml-[-40px] top-[-5rem] lg:top-0 pointer-events-none"></div>
       </div>
     )
   }
