@@ -9,18 +9,18 @@ defineProps({
   ...variants
 })
 
-const page = ref<string>('home')
-
+const page = ref<boolean>(false)
+const router = useRouter()
 
 watchEffect(() => {
-  const router = useRouter()
-  console.log('path', router);
+  if (router.currentRoute.value.path.includes('about')) page.value = true
+  else page.value = false
 })
 
 </script>
 
 <template>
-  <header :class="{ 'has-dialog': hasDialog }">
+  <header :class="{ 'has-dialog': hasDialog }" v-show="!page">
     <Container :fluid="config?.header?.fluid">
       <div class="section left">
         <AppHeaderDialog v-if="hasDialog" />
