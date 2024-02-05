@@ -21,18 +21,27 @@ watchEffect(() => {
     <Container :fluid="config?.footer?.fluid" padded class="footer-container">
       <!-- Left -->
       <div class="left">
+        <!-- <div> -->
         <a v-if="config?.footer?.credits" :href="config?.footer?.credits?.href || '#'" rel="noopener" target="_blank">
           <Icon v-if="config?.footer?.credits?.icon" :name="config?.footer?.credits?.icon" class="left-icon" />
           <p v-if="config?.footer?.credits?.text">{{ config.footer.credits.text }}</p>
         </a>
+        <!-- <a class="mt-3" v-if="config?.footer?.credits" :href="config?.footer?.credits?.href || '#'" rel="noopener"
+            target="_blank">
+            <Icon v-if="config?.footer?.credits?.icon" :name="config?.footer?.credits?.icon" class="left-icon" />
+            <p v-if="config?.footer?.credits?.text">{{ config.footer.credits.text }}</p>
+          </a>
+        </div> -->
       </div>
 
       <!-- Center -->
       <div class="center">
-        <NuxtLink v-for="link in textLinks" :key="link.href" class="text-link" :aria-label="link.text" :href="link.href"
-          :target="link?.target || '_self'" :rel="link?.rel || 'noopener noreferrer'">
-          {{ link.text }}
-        </NuxtLink>
+        <div class="flex items-center flex-col">
+          <NuxtLink v-for="link in textLinks" :key="link.href" class="text-link" :aria-label="link.text" :href="link.href"
+            :target="link?.target || '_self'" :rel="link?.rel || 'noopener noreferrer'">
+            {{ link.text }}
+          </NuxtLink>
+        </div>
       </div>
 
       <!-- Right -->
