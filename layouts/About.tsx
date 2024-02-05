@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-04 10:42:33
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-04 11:42:56
+ * @LastEditTime: 2024-02-05 22:51:09
  * @description: 关于我
  */
 export default defineComponent({
@@ -13,7 +13,7 @@ export default defineComponent({
       //   <NuxtImg class="mx-auto" src="https://svg-banners.vercel.app/api?type=origin&text1=Welcome&text2=dshuais%27%20homepage&width=800&height=300" alt="Name Image" />
       // </div>
       <div>
-        1
+        <AboutSidebar />
       </div>
     )
   }
