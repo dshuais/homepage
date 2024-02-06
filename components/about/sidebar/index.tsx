@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-04 11:43:37
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-06 23:01:45
+ * @LastEditTime: 2024-02-06 23:23:13
  * @description: AboutSidebar
  */
 export default defineComponent({
@@ -60,6 +60,22 @@ export default defineComponent({
       return link._path.includes('http')
     }
 
+    const colorMode = useColorMode()
+
+    function colorDom(color: string) {
+      if (color == 'dark') return <Icon name="uil:moon" />
+      else if (color == 'light') return <Icon name="uil:sun" />
+      else return <Icon name="uil:desktop" />
+    }
+
+    function changeColorMode() {
+      const values = ['system', 'light', 'dark']
+      const index = values.indexOf(colorMode.preference)
+      const next = (index + 1) % values.length
+
+      colorMode.preference = values[next]
+    }
+
     return () => (
       <nav>
         {/* 侧边栏pc端 */}
@@ -86,6 +102,14 @@ export default defineComponent({
                 {index !== tree.value.length - 1 && <div class="w-[1px] h-4 bg-[#8ce4bf]" />}
               </div>
             ))}
+          </div>
+
+          <div class="mb-4 mx-auto">
+            <button aria-label="Color Mode" onClick={changeColorMode} class="flex p-3 text-[rgba(255,255,255,0.55)] hover:text-white">
+              <ColorScheme placeholder="...">
+                {colorDom(colorMode.preference)}
+              </ColorScheme>
+            </button>
           </div>
         </div>
         {/* 导航栏移动端 */}
