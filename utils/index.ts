@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-01-24 16:04:59
  * @LastEditors: dushuai
- * @LastEditTime: 2024-01-26 10:35:26
+ * @LastEditTime: 2024-02-06 22:58:52
  * @description: utils
  */
 /**
@@ -60,4 +60,27 @@ export function uuid() {
   // bits 6-7 of the clock_seq_hi_and_reserved to 01
   s[8] = s[13] = s[18] = s[23] = '-'
   return s.join('')
+}
+
+/**
+ * This is just a simple version of deep copy
+ * Has a lot of edge cases bug
+ * If you want to use a perfect deep copy, use lodash's _.cloneDeep
+ * @param {Object} source
+ * @returns {Object}
+ */
+export function deepClone<T>(source: T & Object): Object {
+  if (!source && typeof source !== 'object') {
+    throw new Error('error arguments deepClone')
+  }
+
+  const targetObj = source!.constructor === Array ? [] : {}
+  Object.keys(source).forEach((keys) => {
+    if (source[keys] && typeof source[keys] === 'object') {
+      targetObj[keys] = deepClone(source[keys])
+    } else {
+      targetObj[keys] = source[keys]
+    }
+  })
+  return targetObj
 }

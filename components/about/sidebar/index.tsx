@@ -2,27 +2,35 @@
  * @Author: dushuai
  * @Date: 2024-02-04 11:43:37
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-06 22:00:35
+ * @LastEditTime: 2024-02-06 23:01:45
  * @description: AboutSidebar
  */
-
-type Navigation = {
-  _path: string,
-  title: string
-}
-
 export default defineComponent({
   name: 'AboutSidebar',
   setup() {
 
-    const { navigation } = useContent()
+    type Navigation = {
+      _path: string,
+      title: string
+    }
+
+    const { navigation: nav } = useContent()
     const { config } = useDocus()
     const filtered = computed(() => config.value.header?.exclude || [])
+    const navigation = ref<Navigation[]>([])
+
+    navigation.value = deepClone(nav.value) as Navigation[]
 
     if (navigation.value[0]._path != '/') {
       navigation.value.unshift({
         title: 'Home',
         _path: '/',
+      })
+    }
+    if (navigation.value.at(-1)?.title != 'Blog') {
+      navigation.value.push({
+        title: 'Blog',
+        _path: 'https://blog.dshuais.com/',
       })
     }
 
@@ -37,6 +45,21 @@ export default defineComponent({
       })
     })
 
+    const menu = ref<Navigation[]>([
+      { title: 'ABOUT', _path: '#about-section' },
+      { title: 'SKILLS', _path: '#skills-section' },
+      { title: 'EXPERIENCES', _path: '#experiences-section' },
+      { title: 'PROJECTS', _path: '#projects-section' },
+    ])
+
+    /**
+     * 判断是否是http链接
+     * @param {Navigation} link
+     */
+    const isHttp = (link: Navigation) => {
+      return link._path.includes('http')
+    }
+
     return () => (
       <nav>
         {/* 侧边栏pc端 */}
@@ -45,12 +68,18 @@ export default defineComponent({
             <NuxtImg class="rounded-full" src="https://files-ds.netlify.app/images/avatar.png" alt="Avatar Image" />
           </div>
 
-          <div class="mb-auto mt-5">目录</div>
+          <div class="mb-auto mt-5">
+            {menu.value.map((item: Navigation) => (
+              <NuxtLink class="block text-center font-bold text-[rgba(255,255,255,0.55)] hover:text-white py-1" to={item._path}>
+                {item.title}
+              </NuxtLink>
+            ))}
+          </div>
 
           <div class="flex items-center justify-center mb-2 text-[#8ce4bf] text-base">
             {tree.value.map((item: Navigation, index: number) => (
               <div class="flex items-center justify-center">
-                <NuxtLink class="mx-3 hover:text-gray-100" to={item._path}>
+                <NuxtLink class="mx-3 hover:text-gray-100" to={item._path} target={isHttp(item) ? '_blank' : '_self'}>
                   {item.title}
                 </NuxtLink>
 
