@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-04 11:43:37
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-07 23:29:50
+ * @LastEditTime: 2024-02-07 23:55:10
  * @description: AboutSidebar
  */
 import logoStyles from '@/components/Logo/index.module.css'
@@ -77,6 +77,8 @@ export default defineComponent({
 
       colorMode.preference = values[next]
     }
+
+    const show = ref<boolean>(false)
 
     return () => (
       <nav>
@@ -160,9 +162,17 @@ export default defineComponent({
           <div class={['col-span-4 flex items-center sm:hidden text-[#8ce4bf] text-lg select-none cursor-pointer', logoStyles['logo-text']]}>
             dshuais
           </div>
-          <div class="col-span-8 flex items-center justify-end sm:hidden text-[#8ce4bf] text-3xl cursor-pointer">
+          <div class="col-span-8 flex items-center justify-end sm:hidden text-[#8ce4bf] text-3xl cursor-pointer"
+            onClick={() => (show.value = true)}>
             <Icon name="material-symbols:menu" />
           </div>
+        </div>
+
+        {/* 移动端弹窗 */}
+        {/* */}
+        <div class={['w-full bg-[rgba(255,255,255,0.5)] backdrop-filter absolute z-10 top-0 transition-all', show.value ? 'h-screen block' : 'h-0 hidden']}>
+          <Icon name="material-symbols:close" class="text-2xl absolute top-5 right-5 cursor-pointer"
+            onClick={() => (show.value = false)} />
         </div>
 
       </nav>
