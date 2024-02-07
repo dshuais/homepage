@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-04 11:43:37
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-06 23:23:13
+ * @LastEditTime: 2024-02-07 23:01:23
  * @description: AboutSidebar
  */
 export default defineComponent({
@@ -80,10 +80,12 @@ export default defineComponent({
       <nav>
         {/* 侧边栏pc端 */}
         <div class="w-[17rem] h-screen bg-[#00C59A] lg:flex flex-col justify-center hidden">
+          {/* 头像 */}
           <div class="w-40 rounded-full p-2 bg-[rgba(255,255,255,0.2)] mx-auto mt-auto mb-0">
             <NuxtImg class="rounded-full" src="https://files-ds.netlify.app/images/avatar.png" alt="Avatar Image" />
           </div>
 
+          {/* 页面导航栏 */}
           <div class="mb-auto mt-5">
             {menu.value.map((item: Navigation) => (
               <NuxtLink class="block text-center font-bold text-[rgba(255,255,255,0.55)] hover:text-white py-1" to={item._path}>
@@ -92,6 +94,7 @@ export default defineComponent({
             ))}
           </div>
 
+          {/* 导航栏 */}
           <div class="flex items-center justify-center mb-2 text-[#8ce4bf] text-base">
             {tree.value.map((item: Navigation, index: number) => (
               <div class="flex items-center justify-center">
@@ -104,7 +107,8 @@ export default defineComponent({
             ))}
           </div>
 
-          <div class="mb-4 mx-auto">
+          {/* 主题切换 */}
+          <div class="mb-0 mx-auto">
             <button aria-label="Color Mode" onClick={changeColorMode} class="flex p-3 text-[rgba(255,255,255,0.55)] hover:text-white">
               <ColorScheme placeholder="...">
                 {colorDom(colorMode.preference)}
@@ -112,8 +116,40 @@ export default defineComponent({
             </button>
           </div>
         </div>
+
         {/* 导航栏移动端 */}
-        <div class="w-full h-14 bg-[#00C59A] black lg:hidden"></div>
+        <div class="w-full h-14 bg-[#00C59A] lg:hidden fixed top-0 px-3 grid gap-2 grid-cols-12">
+          {/* md展示导航栏 sm时不展示 */}
+          <div class="col-span-4">
+            1
+          </div>
+
+          <div class="col-span-4">
+            1
+          </div>
+
+          {/* 主题切换 */}
+          <div class="flex items-center col-span-4">
+            {/* 导航栏 */}
+            <div class="flex items-center justify-center text-[#8ce4bf] text-base">
+              {tree.value.map((item: Navigation, index: number) => (
+                <div class="flex items-center justify-center">
+                  <NuxtLink class="mx-4 hover:text-gray-100" to={item._path} target={isHttp(item) ? '_blank' : '_self'}>
+                    {item.title}
+                  </NuxtLink>
+
+                  <div class="w-[1px] h-4 bg-[#8ce4bf]" />
+                </div>
+              ))}
+            </div>
+
+            <button aria-label="Color Mode" onClick={changeColorMode} class="flex p-3 text-[rgba(255,255,255,0.55)] hover:text-white">
+              <ColorScheme placeholder="...">
+                {colorDom(colorMode.preference)}
+              </ColorScheme>
+            </button>
+          </div>
+        </div>
 
       </nav>
     )
