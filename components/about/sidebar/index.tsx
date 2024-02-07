@@ -2,9 +2,11 @@
  * @Author: dushuai
  * @Date: 2024-02-04 11:43:37
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-07 23:01:23
+ * @LastEditTime: 2024-02-07 23:29:50
  * @description: AboutSidebar
  */
+import logoStyles from '@/components/Logo/index.module.css'
+
 export default defineComponent({
   name: 'AboutSidebar',
   setup() {
@@ -120,16 +122,20 @@ export default defineComponent({
         {/* 导航栏移动端 */}
         <div class="w-full h-14 bg-[#00C59A] lg:hidden fixed top-0 px-3 grid gap-2 grid-cols-12">
           {/* md展示导航栏 sm时不展示 */}
-          <div class="col-span-4">
-            1
+          {/* <div class="col-span-2 flex items-center ml-3">
+            <AppHeaderLogo />
+          </div> */}
+
+          {/* 页面导航栏 */}
+          <div class="col-span-8 sm:flex items-center hidden">
+            {menu.value.map((item: Navigation) => (
+              <NuxtLink class="block text-center font-bold text-[rgba(255,255,255,0.55)] hover:text-white py-1 mx-2" to={item._path}>
+                {item.title}
+              </NuxtLink>
+            ))}
           </div>
 
-          <div class="col-span-4">
-            1
-          </div>
-
-          {/* 主题切换 */}
-          <div class="flex items-center col-span-4">
+          <div class="items-center col-span-4 justify-end sm:flex hidden">
             {/* 导航栏 */}
             <div class="flex items-center justify-center text-[#8ce4bf] text-base">
               {tree.value.map((item: Navigation, index: number) => (
@@ -143,11 +149,19 @@ export default defineComponent({
               ))}
             </div>
 
+            {/* 主题切换 */}
             <button aria-label="Color Mode" onClick={changeColorMode} class="flex p-3 text-[rgba(255,255,255,0.55)] hover:text-white">
               <ColorScheme placeholder="...">
                 {colorDom(colorMode.preference)}
               </ColorScheme>
             </button>
+          </div>
+
+          <div class={['col-span-4 flex items-center sm:hidden text-[#8ce4bf] text-lg select-none cursor-pointer', logoStyles['logo-text']]}>
+            dshuais
+          </div>
+          <div class="col-span-8 flex items-center justify-end sm:hidden text-[#8ce4bf] text-3xl cursor-pointer">
+            <Icon name="material-symbols:menu" />
           </div>
         </div>
 
