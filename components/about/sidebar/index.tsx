@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-04 11:43:37
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-07 23:55:10
+ * @LastEditTime: 2024-02-08 22:39:28
  * @description: AboutSidebar
  */
 import logoStyles from '@/components/Logo/index.module.css'
@@ -90,13 +90,19 @@ export default defineComponent({
           </div>
 
           {/* 页面导航栏 */}
-          <div class="mb-auto mt-5">
+          <div class="mt-5">
             {menu.value.map((item: Navigation) => (
               <NuxtLink class="block text-center font-bold text-[rgba(255,255,255,0.55)] hover:text-white py-1" to={item._path}>
                 {item.title}
               </NuxtLink>
             ))}
           </div>
+
+          {/* github */}
+          <NuxtLink class="mb-auto mt-3 mx-auto" to="https://github.com/dshuais" target='_blank'>
+            <Icon name="mdi:github" class="text-2xl text-[#8ce4bf] hover:text-white" />
+          </NuxtLink>
+
 
           {/* 导航栏 */}
           <div class="flex items-center justify-center mb-2 text-[#8ce4bf] text-base">
@@ -146,17 +152,24 @@ export default defineComponent({
                     {item.title}
                   </NuxtLink>
 
-                  <div class="w-[1px] h-4 bg-[#8ce4bf]" />
+                  <div class="w-[1px] h-4 bg-[#8ce4bf] flex-shrink-0" />
                 </div>
               ))}
             </div>
 
             {/* 主题切换 */}
-            <button aria-label="Color Mode" onClick={changeColorMode} class="flex p-3 text-[rgba(255,255,255,0.55)] hover:text-white">
+            <button aria-label="Color Mode" onClick={changeColorMode} class="flex p-4 text-[rgba(255,255,255,0.55)] hover:text-white">
               <ColorScheme placeholder="...">
                 {colorDom(colorMode.preference)}
               </ColorScheme>
             </button>
+
+            <div class="w-[1px] h-4 bg-[#8ce4bf] flex-shrink-0" />
+
+            {/* github */}
+            <NuxtLink class="p-4 mt-[-2px] flex" to="https://github.com/dshuais" target='_blank'>
+              <Icon name="mdi:github" class="text-lg text-[#8ce4bf] hover:text-white" />
+            </NuxtLink>
           </div>
 
           <div class={['col-span-4 flex items-center sm:hidden text-[#8ce4bf] text-lg select-none cursor-pointer', logoStyles['logo-text']]}>
@@ -169,8 +182,9 @@ export default defineComponent({
         </div>
 
         {/* 移动端弹窗 */}
-        {/* */}
-        <div class={['w-full bg-[rgba(255,255,255,0.5)] backdrop-filter absolute z-10 top-0 transition-all', show.value ? 'h-screen block' : 'h-0 hidden']}>
+        <div class={['w-full bg-[rgba(255,255,255,0.5)] backdrop-saturate-[200%] backdrop-blur-[20px] absolute z-10 top-0 transition-all h-screen',
+          show.value ? 'opacity-100' : 'opacity-0 pointer-events-none']}>
+
           <Icon name="material-symbols:close" class="text-2xl absolute top-5 right-5 cursor-pointer"
             onClick={() => (show.value = false)} />
         </div>
