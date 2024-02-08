@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-04 11:43:37
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-08 22:39:28
+ * @LastEditTime: 2024-02-08 23:00:34
  * @description: AboutSidebar
  */
 import logoStyles from '@/components/Logo/index.module.css'
@@ -78,7 +78,7 @@ export default defineComponent({
       colorMode.preference = values[next]
     }
 
-    const show = ref<boolean>(false)
+    const show = ref<boolean>(true)
 
     return () => (
       <nav>
@@ -182,11 +182,29 @@ export default defineComponent({
         </div>
 
         {/* 移动端弹窗 */}
-        <div class={['w-full bg-[rgba(255,255,255,0.5)] backdrop-saturate-[200%] backdrop-blur-[20px] absolute z-10 top-0 transition-all h-screen',
+        <div class={['w-full bg-[rgba(255,255,255,0.5)] backdrop-saturate-[200%] backdrop-blur-[20px] absolute z-10 top-0 transition-all h-screen pt-20',
           show.value ? 'opacity-100' : 'opacity-0 pointer-events-none']}>
+          <div class="max-w-72 mx-auto">
+            <Icon name="material-symbols:close" class="text-2xl absolute top-5 right-5 cursor-pointer"
+              onClick={() => (show.value = false)} />
 
-          <Icon name="material-symbols:close" class="text-2xl absolute top-5 right-5 cursor-pointer"
-            onClick={() => (show.value = false)} />
+            {/* 主题切换 */}
+            <div class="w-full py-3 px-5 bg-[#f6f6f7] dark:bg-[#202127] rounded-lg flex justify-between items-center">
+              <div class="text-xs text-gray-500 dark:text-gray-400">Appearance</div>
+
+              <button aria-label="Color Mode" onClick={changeColorMode} class="text-lg text-gray-500 hover:text-gray-900 dark:text-[rgba(255,255,255,0.55)] dark:hover:text-white">
+                <ColorScheme placeholder="...">
+                  {colorDom(colorMode.preference)}
+                </ColorScheme>
+              </button>
+            </div>
+
+
+            {/* github */}
+            <NuxtLink class="text-center block mt-4" to="https://github.com/dshuais" target='_blank'>
+              <Icon name="mdi:github" class="text-2xl text-gray-600 hover:text-gray-900" />
+            </NuxtLink>
+          </div>
         </div>
 
       </nav>
