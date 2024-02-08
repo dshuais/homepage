@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-04 11:43:37
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-08 23:00:34
+ * @LastEditTime: 2024-02-08 23:25:36
  * @description: AboutSidebar
  */
 import logoStyles from '@/components/Logo/index.module.css'
@@ -78,7 +78,11 @@ export default defineComponent({
       colorMode.preference = values[next]
     }
 
-    const show = ref<boolean>(true)
+    const show = ref<boolean>(false)
+
+    function close() {
+      show.value = false
+    }
 
     return () => (
       <nav>
@@ -182,27 +186,52 @@ export default defineComponent({
         </div>
 
         {/* 移动端弹窗 */}
-        <div class={['w-full bg-[rgba(255,255,255,0.5)] backdrop-saturate-[200%] backdrop-blur-[20px] absolute z-10 top-0 transition-all h-screen pt-20',
+        <div class={['w-full bg-[rgba(255,255,255,0.5)] dark:bg-[rgba(0,0,0,0.5)] backdrop-saturate-[200%] backdrop-blur-[20px] absolute z-10 top-0 transition-all h-screen pt-20 select-none',
           show.value ? 'opacity-100' : 'opacity-0 pointer-events-none']}>
           <div class="max-w-72 mx-auto">
             <Icon name="material-symbols:close" class="text-2xl absolute top-5 right-5 cursor-pointer"
-              onClick={() => (show.value = false)} />
+              onClick={close} />
+
+            <div class="text-lg border-b border-gray-300 pb-2">
+              Page
+            </div>
+
+            {/* 页面导航栏 */}
+            <div class="mt-2 pl-3">
+              {menu.value.map((item: Navigation) => (
+                <NuxtLink class="block mb-1 text-gray-500 hover:text-gray-900 dark:text-[rgba(255,255,255,0.8)] dark:hover:text-white" to={item._path}>
+                  {item.title}
+                </NuxtLink>
+              ))}
+            </div>
+
+            <div class="mt-6 text-lg border-b border-gray-300 pb-2">
+              Menu
+            </div>
+
+            {/* 导航栏 */}
+            <div class="flex flex-col mt-2 text-gray-500 dark:text-[rgba(255,255,255,0.8)] text-base">
+              {tree.value.map((item: Navigation, index: number) => (
+                <NuxtLink class="pl-3 mb-1 hover:text-gray-900 dark:hover:text-white" to={item._path} target={isHttp(item) ? '_blank' : '_self'}>
+                  {item.title}
+                </NuxtLink>
+              ))}
+            </div>
 
             {/* 主题切换 */}
-            <div class="w-full py-3 px-5 bg-[#f6f6f7] dark:bg-[#202127] rounded-lg flex justify-between items-center">
+            <div class="w-full py-3 px-5 mt-6 bg-[#f6f6f7] dark:bg-[#202127] rounded-lg flex justify-between items-center">
               <div class="text-xs text-gray-500 dark:text-gray-400">Appearance</div>
 
-              <button aria-label="Color Mode" onClick={changeColorMode} class="text-lg text-gray-500 hover:text-gray-900 dark:text-[rgba(255,255,255,0.55)] dark:hover:text-white">
+              <button aria-label="Color Mode" onClick={changeColorMode} class="text-lg text-gray-500 hover:text-gray-900 dark:text-[rgba(255,255,255,0.8)] dark:hover:text-white">
                 <ColorScheme placeholder="...">
                   {colorDom(colorMode.preference)}
                 </ColorScheme>
               </button>
             </div>
 
-
             {/* github */}
             <NuxtLink class="text-center block mt-4" to="https://github.com/dshuais" target='_blank'>
-              <Icon name="mdi:github" class="text-2xl text-gray-600 hover:text-gray-900" />
+              <Icon name="mdi:github" class="text-2xl text-gray-600 hover:text-gray-900 dark:text-[rgba(255,255,255,0.8)] dark:hover:text-white" />
             </NuxtLink>
           </div>
         </div>
