@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-04 11:43:37
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-18 11:45:44
+ * @LastEditTime: 2024-02-18 11:56:57
  * @description: AboutSidebar
  */
 import logoStyles from '@/components/Logo/index.module.css'
@@ -88,10 +88,15 @@ export default defineComponent({
      * 监听弹窗打开关闭 对body设置属性 避免弹窗时滚动条滚动的问题
      */
     watchEffect(() => {
-      if (show.value) {
-        document.body.style.overflow = 'hidden'
-      } else {
-        document.body.style.overflow = ''
+      if (process.client) {
+        const html = document.documentElement
+        if (show.value) {
+          html.style.overflow = 'hidden'
+        } else {
+          setTimeout(() => {
+            html.style.overflow = ''
+          }, 100);
+        }
       }
     })
 
