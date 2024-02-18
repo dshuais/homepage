@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-04 11:43:37
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-08 23:25:36
+ * @LastEditTime: 2024-02-18 11:45:44
  * @description: AboutSidebar
  */
 import logoStyles from '@/components/Logo/index.module.css'
@@ -84,10 +84,21 @@ export default defineComponent({
       show.value = false
     }
 
+    /**
+     * 监听弹窗打开关闭 对body设置属性 避免弹窗时滚动条滚动的问题
+     */
+    watchEffect(() => {
+      if (show.value) {
+        document.body.style.overflow = 'hidden'
+      } else {
+        document.body.style.overflow = ''
+      }
+    })
+
     return () => (
       <nav>
         {/* 侧边栏pc端 */}
-        <div class="w-[17rem] h-screen bg-[#00C59A] lg:flex flex-col justify-center hidden">
+        <div class="w-[17rem] h-screen bg-[#00C59A] lg:flex flex-col justify-center hidden fixed">
           {/* 头像 */}
           <div class="w-40 rounded-full p-2 bg-[rgba(255,255,255,0.2)] mx-auto mt-auto mb-0">
             <NuxtImg class="rounded-full" src="https://files-ds.netlify.app/images/avatar.png" alt="Avatar Image" />

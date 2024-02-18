@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-04 10:42:33
  * @LastEditors: dushuai
- * @LastEditTime: 2024-02-18 10:49:59
+ * @LastEditTime: 2024-02-18 11:35:40
  * @description: 关于我
  */
 export default defineComponent({
@@ -14,7 +14,7 @@ export default defineComponent({
       // </div>
       <div class="lg:flex">
         <AboutSidebar />
-        <div class="mt-14 lg:mt-0 lg:w-[calc(100%-17rem)]">
+        <div class="mt-14 lg:mt-0 lg:w-[calc(100%-17rem)] lg:ml-[17rem]">
           <AboutContent />
         </div>
       </div>
