@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-04 11:43:37
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-12 12:15:13
+ * @LastEditTime: 2024-03-12 12:24:17
  * @description: AboutSidebar
  */
 import { ColorScheme, Icon, NuxtImg, NuxtLink } from '#components'
@@ -99,6 +99,11 @@ export default defineComponent({
           }, 100);
         }
       }
+    })
+
+    onBeforeUnmount(() => {
+      show.value = false
+      document.documentElement.style.overflow = ''
     })
 
     return () => (
