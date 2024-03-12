@@ -2,7 +2,7 @@
  * @Author: dushuai
  * @Date: 2024-02-04 11:43:37
  * @LastEditors: dushuai
- * @LastEditTime: 2024-03-12 12:07:06
+ * @LastEditTime: 2024-03-12 12:15:13
  * @description: AboutSidebar
  */
 import { ColorScheme, Icon, NuxtImg, NuxtLink } from '#components'
@@ -203,7 +203,7 @@ export default defineComponent({
         </div>
 
         {/* 移动端弹窗 */}
-        <div class={['w-full bg-[rgba(255,255,255,0.5)] dark:bg-[rgba(0,0,0,0.5)] backdrop-saturate-[200%] backdrop-blur-[20px] absolute z-10 top-0 transition-all h-screen pt-20 select-none',
+        <div class={['w-full bg-[rgba(255,255,255,0.5)] dark:bg-[rgba(0,0,0,0.5)] backdrop-saturate-[200%] backdrop-blur-[20px] fixed z-10 top-0 transition-all h-screen pt-20 select-none',
           show.value ? 'opacity-100' : 'opacity-0 pointer-events-none']}>
           <div class="max-w-72 mx-auto">
             <Icon name="material-symbols:close" class="text-2xl absolute top-5 right-5 cursor-pointer"
